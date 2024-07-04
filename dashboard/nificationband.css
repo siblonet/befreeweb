@@ -153,25 +153,25 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: #087752;
+    background-color: #ffffff;
     /* Fallback color */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #fd8a06;
+    background-color: #087752;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #f0b434;
+    background-color: #087752;
 }
 
 /* Width and color for Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #fd8a06 #087752;
+    scrollbar-color: #087752 #ffffff;
 }
 
 /* Width and color for Edge */
