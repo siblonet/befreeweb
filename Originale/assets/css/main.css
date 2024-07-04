@@ -2975,21 +2975,14 @@ span {
 
 .brand-slider .brand-image {
   text-align: center;
-  filter: grayscale(100%);
   transition: all 0.4s ease-in-out;
-  opacity: 0.9;
+  overflow: hidden;
+  width: 100%;
 }
 
-.brand-slider .brand-image:hover {
-  filter: initial;
-  opacity: 1;
+.topabran{
+  margin-top: -50px;
 }
-
-.brand-slider .swiper-slide.swiper-slide-active .brand-image {
-  filter: initial;
-  opacity: 1;
-}
-
 .counter-version-wrapv1 {
   border-radius: 20px;
   background: var(--white-clr);
@@ -4900,9 +4893,10 @@ iframe {
   overflow: hidden !important;
 }
 
-.topa{
+.topa {
   margin-top: -15%;
 }
+
 @media only screen and (max-width:991px) {
   .topa {
     margin-top: -70% !important;
