@@ -1,6 +1,7 @@
 async function LoadFromBackend() {
     const countries = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreePays');
     if (countries) {
+        await clearCountries();
         await PostCountries(countries);
         const coopera = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
         const agriculteur = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeAgrulter');
