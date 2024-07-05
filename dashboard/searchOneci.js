@@ -153,28 +153,7 @@ const SelectedCounty = async (encodedId) => {
     nni.placeholder = "Selectionnez ou Cherchez une catégorie";
     nni.blur();
 
-    const categories = [
-        {
-            _id: "drmgjrgh3684rgzzqfjkl",
-            name: "Cacao",
-            pays: id,
-        },
-        {
-            _id: "drmszgjrgh3684rgzzqfjkl",
-            name: "Manioc",
-            pays: "drmgjrgh3684rgzzqfjkl",
-        },
-        {
-            _id: "drmszgjrgh3684rgzzqfjkl",
-            name: "Manioc",
-            pays: id,
-        },
-        {
-            _id: "drmgjrgfeffh3684rgzzqfjkl",
-            name: "Igname",
-            pays: id,
-        },
-    ]; //await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCategorie');
+    const categories = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCategorie');
     const countriesid = document.getElementById('countriesid');
     countriesid.innerHTML = "";
 
@@ -219,20 +198,7 @@ const SelectedCategory = async (encodedId) => {
     nni.placeholder = "Selectionnez ou Cherchez une coopérative";
     nni.blur();
 
-    const cooperatives = [
-        {
-            _id: "646g4dgdg",
-            nom: "Befree",
-            certificate: [{ photo: "string" }],
-            categorie: id,
-        },
-        {
-            _id: "646g4dgdgs",
-            nom: "Befree",
-            certificate: [{ photo: "string" }],
-            categorie: id,
-        }
-    ]; //await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
+    const cooperatives = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
     const countriesid = document.getElementById('countriesid');
 
 
@@ -338,10 +304,56 @@ const SelectedCooperative = async (encodedId) => {
 async function LoadAgriculters(coop_id) {
     const access = sessionStorage.getItem("befree");
     if (access) {
-        //const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
         const main_contaner = document.getElementById('main');
         main_contaner.classList.add('otherstym');
         main_contaner.innerHTML = headers_html;
+        const render_agriculter = document.getElementById('render_agriculter');
+        render_agriculter.innerHTML = "";
+        const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
+
+        if (agriculteurb && agriculteurb.length) {
+            agriculteurb.forEach((agricul) => {
+                const agriculHtml = `
+                <a class="products-row clicbleclass" href="agriculterdisplay.html#${agricul.identifiant_interne_exploitation}"  target="_blank">
+                            <button class="cell-more-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-more-vertical">
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                </svg>
+                            </button>
+                            <div class="product-cell image">
+                                <img src="${agricul.document}" alt="product">
+                                <span>${agricul.identifiant_interne_exploitation}</span>
+                            </div>
+                            <div class="product-cell category">
+                                <span class="cell-label">Année de naissance:</span>
+                                ${agricul.annee_naissance}
+                            </div>
+                            <div class="product-cell status-cell">
+                                <span class="cell-label">Genre:</span>
+                                <span class="status active">${agricul.genre === "h" ? "Homme" : "Femme"}</span>
+                            </div>
+                            <div class="product-cell sales">
+                                <span class="cell-label">Prénom:</span>
+                                ${agricul.prenom}
+                            </div>
+                            <div class="product-cell stock">
+                                <span class="cell-label">Nom:</span>
+                                ${agricul.nom}
+                            </div>
+                            <div class="product-cell price">
+                                <span class="cell-label">Prenom:</span>
+                                ${agricul.numero_telephone}
+                            </div>
+                        </a>
+
+                `;
+                render_agriculter.innerHTML += agriculHtml;
+            });
+        }
         style_Beheviors_init()
     } else {
         window.location.href = "../Autorisation.html"

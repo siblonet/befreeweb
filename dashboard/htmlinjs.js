@@ -143,41 +143,43 @@ const headers_html = `
                     <!-- @@@@@@@@@@ data in tble start @@@@@@@@-->
                     <!-- @@@@@@@@@@ data in tble start @@@@@@@@-->
 
-                    <a class="products-row clicbleclass" href="agriculterdisplay.html#GA-BIA-001"  target="_blank">
-                        <button class="cell-more-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" />
-                            </svg>
-                        </button>
-                        <div class="product-cell image">
-                            <img src="https://befree.ci/media/operateurs/photo_2024-06-24_15-53-26.jpg" alt="product">
-                            <span>GA-BIA-001</span>
-                        </div>
-                        <div class="product-cell category">
-                            <span class="cell-label">Année de naissance:</span>
-                            1980
-                        </div>
-                        <div class="product-cell status-cell">
-                            <span class="cell-label">Genre:</span>
-                            <span class="status active">Homme</span>
-                        </div>
-                        <div class="product-cell sales">
-                            <span class="cell-label">Prenom:</span>
-                            Ramde Sylvestre
-                        </div>
-                        <div class="product-cell stock">
-                            <span class="cell-label">Nom:</span>
-                            BONY
-                        </div>
-                        <div class="product-cell price">
-                            <span class="cell-label">Prenom:</span>
-                            0506369696
-                        </div>
-                    </a>
+                    <div id="render_agriculter">
+                        <a class="products-row clicbleclass" href="agriculterdisplay.html#GA-BIA-001"  target="_blank">
+                            <button class="cell-more-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-more-vertical">
+                                    <circle cx="12" cy="12" r="1" />
+                                    <circle cx="12" cy="5" r="1" />
+                                    <circle cx="12" cy="19" r="1" />
+                                </svg>
+                            </button>
+                            <div class="product-cell image">
+                                <img src="https://befree.ci/media/operateurs/photo_2024-06-24_15-53-26.jpg" alt="product">
+                                <span>GA-BIA-001</span>
+                            </div>
+                            <div class="product-cell category">
+                                <span class="cell-label">Année de naissance:</span>
+                                1980
+                            </div>
+                            <div class="product-cell status-cell">
+                                <span class="cell-label">Genre:</span>
+                                <span class="status active">Homme</span>
+                            </div>
+                            <div class="product-cell sales">
+                                <span class="cell-label">Prenom:</span>
+                                Ramde Sylvestre
+                            </div>
+                            <div class="product-cell stock">
+                                <span class="cell-label">Nom:</span>
+                                BONY
+                            </div>
+                            <div class="product-cell price">
+                                <span class="cell-label">Prenom:</span>
+                                0506369696
+                            </div>
+                        </a>
+                    </div>
 
                     <!-- @@@@@@@@@@ data in tble ends @@@@@@@@-->
                     <!-- @@@@@@@@@@ data in tble ends @@@@@@@@-->
