@@ -16,7 +16,7 @@ function getAdmin() {
         document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> Visiteur`;
         document.getElementById('userph').innerHTML = `<i class="lnr lnr-phone-handset"></i> 457000`;
         //window.location.href = "/";
-
+        LoadFromBackend()
     }
 };
 getAdmin();

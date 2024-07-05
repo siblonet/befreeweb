@@ -92,7 +92,7 @@
 
                             <div id="respond" class="comment-respond">
                                 <div class="searchBoar">
-                                    <input class="inputBg" id="nni" placeholder="Chercher un pays" name="nni"
+                                    <input class="inputBg" id="nni" placeholder="Chercher un pays (Nom ou Tél Code)" name="nni"
                                         type="text" value="" autocomplete="nni" style="text-transform: uppercase;" />
                                     <i class="lnr lnr-magnifier" onclick="Search()"></i>
                                 </div>
@@ -139,17 +139,17 @@
                                             <br>
                                             <div>
                                                 <p>Nombre de pays: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;"> 6</p>
+                                                <p style="color: #ED7D31; font-weight: bold;" id="idpays"></p>
                                             </div>
 
                                             <div>
                                                 <p>Coopératives: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;">6</p>
+                                                <p style="color: #ED7D31; font-weight: bold;" id="idcooperative"></p>
                                             </div>
 
                                             <div>
                                                 <p>Agriculteurs: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;"> 1031</p>
+                                                <p style="color: #ED7D31; font-weight: bold;" id="idagriculture"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -190,10 +190,10 @@
 
     <script data-minify="1" type="text/javascript" src="searchscriptb.js" id="child-scripts-js"></script>
     <script src="routers.js"></script>
-    <script src="convertisseur.js"></script>
-    <script src="autanticator.js"></script>
+    <script src="services/database_handl.js"></script>
+    <script src="services/database_service.js"></script>
     <script src="httpsRequester.js"></script>
-    <script src="requestRunner.js"></script>
+    <script src="initiator.js"></script>
     <script src="connectedCheck.js"></script>
     <script src="searchOneci.js"></script>
 
