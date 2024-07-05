@@ -244,53 +244,64 @@
     text-align: center;
 }
 
+.valideuserpar {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .valideuserpar {
+        padding: 0 20% 0 20%;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .valideuserpar {
+        padding: 0% 0% 0% 0%;
+    }
+}
+
+
+
 .valideuser {
     align-items: center;
-    justify-content: space-between;
-    border-radius: 20px;
-    height: 300px;
+    border-radius: 10px;
+    height: 200px;
     width: 100%;
     align-self: center;
     box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
     overflow: hidden;
-    display: none;
     padding: 10px;
+    display: flex;
+    align-self: center;
 }
 
-.valideuser #userinfos {
-    width: 70%;
-    text-align: left;
+.valideuser #userface {
+    width: 35%;
+    text-align: center;
 }
 
-.valideuser .baima {
-    filter: grayscale(100%);
-    z-index: -1;
-    /* Ensure the background is behind other content */
-    transform: rotate(45deg);
-    /* Rotate the background image by 45 degrees */
-    opacity: 0.2;
-    /* Adjust the opacity value (from 0 to 1) to decrease opacity */
-    position: absolute;
-    height: 50px;
-    width: 50px;
+.valideuser #countriesdata {
+    width: 65%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.valideuser #countriesdata div {
+    display: flex;
+    column-gap: 5%;
     align-self: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
-
-.valideuser .baimb {
-    filter: grayscale(100%);
-    z-index: -1;
-    /* Ensure the background is behind other content */
-    transform: rotate(102deg);
-    /* Rotate the background image by 45 degrees */
-    opacity: 0.2;
-    /* Adjust the opacity value (from 0 to 1) to decrease opacity */
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    align-self: flex-start;
-    margin-left: 25%;
-    margin-top: 17%;
+.valideuser #countriesdata div p {
+    line-height: 0px;
 }
 
 @media (max-width: 620px) {
@@ -313,6 +324,7 @@
 #nni:focus {
     width: 100%;
 }
+
 
 
 .searchBoar .fingerprin {
