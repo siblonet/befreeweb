@@ -144,6 +144,12 @@
     color: #087752;
 }
 
+
+.otherstym {
+    height: 100vh;
+    overflow: hidden;
+}
+
 /* Width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -153,25 +159,25 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: #ffffff;
+    background-color: rgba(195, 207, 244, 0.493);
     /* Fallback color */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #087752;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #087752;
+    background-color: #ffffff;
 }
 
 /* Width and color for Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #087752 #ffffff;
+    scrollbar-color: #ffffff rgba(195, 207, 244, 0.493);
 }
 
 /* Width and color for Edge */
@@ -188,7 +194,7 @@
 }
 
 *::-webkit-scrollbar-track {
-    background-color: #087752;
+    background-color: #ffffff;
     /* Fallback color for Firefox */
 }
 
@@ -211,12 +217,12 @@
 }
 
 .searchBoar .inputBg {
-    width: 230px;
+    width: 300px;
     border-radius: 12px !important;
 }
 
 .searchBoar i {
-    margin-left: -45px;
+    margin-left: -35px;
     font-size: large;
     font-weight: bold;
     color: #fd8a06;
@@ -298,6 +304,7 @@
     align-self: flex-start;
     justify-content: flex-start;
     align-items: flex-end;
+    line-height: -10px !important;
 }
 
 .valideuser #countriesdata div p {
@@ -326,6 +333,15 @@
 }
 
 
+.selectedcount {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+}
 
 .searchBoar .fingerprin {
     align-items: center;
@@ -349,4 +365,54 @@
     border-radius: 12px;
     box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
     cursor: pointer;
+}
+
+.valideuserpar .btn_older {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.valideuserpar .btn_older .btno {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 5px;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+.valideuserpar .btn_older .btno.vali {
+    color: rgb(0, 123, 255);
+    background-color: rgba(0, 123, 255, 0.418);
+    box-shadow: 0 5px 5px 0 rgba(0, 15, 15, 0.418);
+}
+
+
+.valideuserpar .btno.anul {
+    color: rgb(255, 51, 0);
+    background-color: rgba(255, 51, 0, 0.418);
+    box-shadow: 0 5px 5px 0 rgba(0, 15, 15, 0.418);
+}
+
+.guidmessage {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+}
+
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@ Table @@@@@@@@@@@@@@@@@@@@@@@*/
+
+.table-image td,
+.table-image th {
+    vertical-align: middle;
 }

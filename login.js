@@ -40,9 +40,11 @@ const Conneter = async () => {
 
             loading.setAttribute("onclick", "Conneter()");
             loading.innerText = "Envoyez";
-        } else if (responseData.id) {
-            sessionStorage.setItem('invite', responseData.id);
-            window.location.href = "/dashboard";
+        } else if (responseData._id) {
+
+            const tosave = `${responseData._id}°${responseData.name}°${responseData.access}`;
+            sessionStorage.setItem('befree', tosave);
+            window.location.href = "dashboard/dashboard.html";
 
         } else {
             document.getElementById('linkmessa').innerHTML = `

@@ -36,6 +36,8 @@
     <style type="text/css" id="custom-background-css"></style>
     <link rel="icon" href="../logo.png" sizes="32x32" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body
@@ -82,86 +84,117 @@
         </header>
 
         <main id="main" class="site-main">
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything goes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything goes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything goes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything goes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything goes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
             <div id="content" class="site-content">
                 <div class="tg-container tg-container--flex tg-container--flex-space-between tratosee">
 
+                    <div class="tg-container tg-container--flex tg-container--flex-space-between tratosee">
 
-                    <div id="primary" class="content-area">
 
-                        <div id="comments" class="comments-area">
+                        <div id="primary" class="content-area">
 
-                            <div id="respond" class="comment-respond">
-                                <div class="searchBoar">
-                                    <input class="inputBg" id="nni" placeholder="Chercher un pays (Nom ou Tél Code)" name="nni"
-                                        type="text" value="" autocomplete="nni" style="text-transform: uppercase;" />
-                                    <i class="lnr lnr-magnifier" onclick="Search()"></i>
-                                </div>
+                            <div id="comments" class="comments-area">
 
-                                <div class="searchBoar" id="countriesid">
-                                    <!--a class="fingerprin">
-                                        Côte d'Ivoire
-                                    </a>
-
-                                    <a class="fingerprin">
-                                        Cameroun
-                                    </a>
-
-                                    <a class="fingerprin">
-                                        Mali
-                                    </a>
-
-                                    <a class="fingerprin">
-                                        Congo (RDC)
-                                    </a>
-
-                                    <a class="fingerprin">
-                                        Togo
-                                    </a>
-
-                                    <a class="fingerprin">
-                                        Burkina Faso
-                                    </a-->
-                                </div>
-                                <br>
-
-                                <div class="loadia" id="messago">
-                                    <img src="./asserts/loaging.gif" style="height: 100%; width: 100%;"
-                                        alt="Loading ...">
-                                </div>
-
-                                <div class="valideuserpar">
-                                    <div class="valideuser" id="valideuser">
-                                        <div id="userface">
-                                            <img src="../logo.png" style="height: 70%; width: 70%;" alt="User Face">
+                                <div id="respond" class="comment-respond">
+                                    <div class="searchBoar">
+                                        <div class="dd" id="selectedcount">
+                                            <!-- selected here -->
                                         </div>
 
-                                        <div id="countriesdata">
-                                            <br>
-                                            <div>
-                                                <p>Nombre de pays: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;" id="idpays"></p>
+                                        <input class="inputBg" id="nni" placeholder="Cherchez un pays (Nom ou Tél Code)"
+                                            name="nni" type="text" value="" autocomplete="nni"
+                                            style="text-transform: uppercase;" />
+                                        <i class="lnr lnr-magnifier" onclick="Search()"></i>
+                                    </div>
+
+                                    <div class="searchBoar" id="countriesid">
+                                        <!--a class="fingerprin">
+                                    Côte d'Ivoire
+                                </a>
+            
+                                <a class="fingerprin">
+                                    Cameroun
+                                </a>
+            
+                                <a class="fingerprin">
+                                    Mali
+                                </a>
+            
+                                <a class="fingerprin">
+                                    Congo (RDC)
+                                </a>
+            
+                                <a class="fingerprin">
+                                    Togo
+                                </a>
+            
+                                <a class="fingerprin">
+                                    Burkina Faso
+                                </a-->
+                                    </div>
+                                    <br>
+
+                                    <div class="loadia" id="messago">
+                                        <img src="./asserts/loaging.gif" style="height: 100%; width: 100%;"
+                                            alt="Loading ...">
+                                    </div>
+
+                                    <div class="valideuserpar">
+                                        <div class="valideuser" id="valideuser">
+                                            <div id="userface">
+                                                <img src="../logo.png" style="height: 85%; width: 85%;" alt="User Face">
                                             </div>
 
-                                            <div>
-                                                <p>Coopératives: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;" id="idcooperative"></p>
-                                            </div>
+                                            <div id="countriesdata">
+                                                <br>
+                                                <div>
+                                                    <p>Pays: </p>
+                                                    <p style="color: #ED7D31; font-weight: bold;" id="idpays"></p>
+                                                </div>
 
-                                            <div>
-                                                <p>Agriculteurs: </p>
-                                                <p style="color: #ED7D31; font-weight: bold;" id="idagriculture"></p>
+                                                <div>
+                                                    <p>Catégories: </p>
+                                                    <p style="color: #ED7D31; font-weight: bold;" id="idcategory"></p>
+                                                </div>
+
+                                                <div>
+                                                    <p>Coopératives: </p>
+                                                    <p style="color: #ED7D31; font-weight: bold;" id="idcooperative">
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <p>Agriculteurs: </p>
+                                                    <p style="color: #ED7D31; font-weight: bold;" id="idagriculture">
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
+
                             </div>
 
                         </div>
 
                     </div>
-
                 </div>
             </div>
+
+
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+            <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ everything endes here @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
         </main>
 
     </div>
@@ -190,13 +223,14 @@
 
     <script data-minify="1" type="text/javascript" src="searchscriptb.js" id="child-scripts-js"></script>
     <script src="routers.js"></script>
+    <script src="htmlinjs.js"></script>
+    <script src="./script.js"></script>
     <script src="services/database_handl.js"></script>
     <script src="services/database_service.js"></script>
     <script src="httpsRequester.js"></script>
     <script src="initiator.js"></script>
-    <script src="connectedCheck.js"></script>
     <script src="searchOneci.js"></script>
-
+    <script src="connectedCheck.js"></script>
 </body>
 
 </html>
