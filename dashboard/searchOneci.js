@@ -5,7 +5,7 @@ const Search = async (nni) => {
     if (nni && nni.length) {
         const countries = await GetAllCountries();
 
-        const country = countries.filter((eds) => eds.nom.startsWith(nni) || eds.telcode.startsWith(nni));
+        const country = countries.filter((eds) => eds.nom.startsWith(nni) || eds.nom.startsWith(nni.toUpperCase()) || eds.nom.startsWith(nni.toLowerCase()) || eds.telcode.startsWith(nni));
         const countriesid = document.getElementById('countriesid');
 
         if (country.length) {
