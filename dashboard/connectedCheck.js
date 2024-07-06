@@ -49,7 +49,7 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                          <span>${agricul.identifiant_interne_exploitation}</span>
                      </div>
                      <div class="product-cell category">
@@ -107,7 +107,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -150,7 +150,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
