@@ -8,12 +8,19 @@ function getAdmin() {
         const phone = splo[2];
 
         document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> ${name}`;
-        document.getElementById('userph').innerHTML = `<i class="lnr lnr-phone-handset"></i> ${phone}`;
+        document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> ${phone}`;
+        const diconnector = document.getElementById('diconnector');
+        diconnector.setAttribute("onclick", `Disconnect('diconnect')`);
+
+        diconnector.innerHTML = `
+        <i class="lnr lnr-power-switch" style="color: red;"></i>Déconnecter
+        `;
+
         LoadFromBackend();
         Executa()
     } else {
         document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> Visiteur`;
-        document.getElementById('userph').innerHTML = `<i class="lnr lnr-phone-handset"></i> 457000`;
+        document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> 457000`;
         LoadFromBackend()
     }
 };
@@ -24,9 +31,9 @@ const Executa = async () => {
     main_contaner.innerHTML = headers_html;
     const render_agriculter = document.getElementById('render_agriculter');
     render_agriculter.innerHTML = `
-        <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center;">
+        <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
-                    <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <img src="./loadingc.gif" style="height: 80%; width: 200px;" alt="">
                     <p>En cours ...</p>
             </div>
         </div>
@@ -34,7 +41,7 @@ const Executa = async () => {
     const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreeAgrulter`);
     if (agriculteurb && agriculteurb.length) {
         AGRICO = agriculteurb;
-        document.getElementById('agri_lenthg').innerText = agriculteurb.length;
+        document.getElementById('agri_lenthg').innerText = `Total: ${agriculteurb.length}`;
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
@@ -49,7 +56,7 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                          <span>${agricul.identifiant_interne_exploitation}</span>
                      </div>
                      <div class="product-cell category">
@@ -107,7 +114,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -150,7 +157,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -182,8 +189,19 @@ function ChercheAgriculters(coop_id = "0") {
 
 }
 
-function Disconnect() {
-    sessionStorage.clear();
-    window.location.reload()
+function Disconnect(what) {
+    if (what === "connecter") {
+        window.location.href = "../Autorisation.html"
+    } else {
+        sessionStorage.clear();
+        window.location.reload();
+        const diconnector = document.getElementById('diconnector');
+        diconnector.setAttribute("onclick", `Disconnect('connecter')`);
+
+        diconnector.innerHTML = `
+        <i class="lnr lnr-enter" style="color: red;"></i>Connecter
+        `;
+
+    }
 }
 getAdmin();

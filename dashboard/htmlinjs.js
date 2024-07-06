@@ -24,7 +24,7 @@ const headers_html = `
                     <div class="app-content-actions-wrapper">
                         <div class="filter-button-wrapper">
                             <button class="action-button filter jsFilter">
-                                <span>Filter</span>
+                                <span>Filtrer</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-filter">
@@ -33,32 +33,24 @@ const headers_html = `
                             </button>
                             <div class="filter-menu">
                                 <label>Pays</label>
-                                <select>
-                                    <option>Côte d'Ivoire</option>
-                                    <option>Cameroun</option>
-                                    <option>Burkina Faso</option>
-                                    <option>Mali</option>
-                                    <option>Congo (RDC)</option>
+                                <select id="pays_listing">
+                                   <option>Patientez encours ...</option>
                                 </select>
+
                                 <label>Catégorie</label>
-                                <select>
-                                    <option>Tous</option>
-                                    <option>Cacao</option>
-                                    <option>Manioc</option>
-                                    <option>Igname</option>
+                                <select id="categori_listing">
+                                    <option>Patientez encours ...</option>
                                 </select>
+
                                 <label>Coopérative</label>
-                                <select>
-                                    <option>Tous</option>
-                                    <option>Befree</option>
-                                    <option>Pan Affrica</option>
-                                    <option>MKS</option>
+                                <select id="coop_listing">
+                                   <option>Patientez encours ...</option>
                                 </select>
-                                <div class="filter-menu-buttons">
-                                    <button class="filter-button reset">
+                                <div class="filter-menu-buttons" id="ready_tofilter">
+                                    <button id="reset_filter" class="filter-button reset" onclick="ResetFilter()">
                                         Refaire
                                     </button>
-                                    <button class="filter-button apply">
+                                    <button id="applay_filter" class="filter-button apply" onclick="">
                                         Appliquez
                                     </button>
                                 </div>
@@ -77,7 +69,7 @@ const headers_html = `
                             </svg>
                         </button>
                         <button class="action-button grid" title="Grid View">
-                            <span id="agri_lenthg">0</span>
+                            <span id="agri_lenthg">Total: ...</span>
                         </button>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr-FR">
+<html lang="fr-FR" class="light">
 
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,8 @@
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <title>Espace Explorateur</title>
     <meta name="author" content="John Kokar" />
-    <link rel="stylesheet" href="dashboard/searchstyle.css">
-    <link rel="stylesheet" href="dashboard/nificationband.css">
+    <link rel="stylesheet" href="./searchstyle.css">
+    <link rel="stylesheet" href="./nificationband.css">
     <meta name="theme-color" content="#ff5c00" />
 
     <style id='wp-block-library-theme-inline-css' type='text/css'></style>
@@ -20,7 +20,7 @@
     <script data-minify="1" type="text/javascript"
         src="https://www.sliderrevolution.com/wp-content/cache/min/1/wp-content/plugins/lordicon-interactive-icons/dist/element.js?ver=1709907682"
         id="lordicon-element-js-js">
-    </script>
+        </script>
     <script type="text/javascript" src="https://www.sliderrevolution.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
         id="jquery-core-js"></script>
     <script type="text/javascript"
@@ -38,7 +38,7 @@
     <link rel="icon" href="../logo.png" sizes="32x32" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="dashboard/style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body
@@ -59,7 +59,7 @@
                 <div class="allin">
                     <a class="iconnotification">
                         <span>0</span>
-                        <img src="dashboard/asserts/not.png" style="height: 100%; width: 100%;" alt="">
+                        <img src="./asserts/not.png" style="height: 100%; width: 100%;" alt="">
                         <div class="dropdowna">
                             <p>Vous n'avez pas de notification</p>
                         </div>
@@ -68,13 +68,15 @@
                     <a style="width: 50px;"></a>
 
                     <a class="iconprofile">
-                        <img src="dashboard/asserts/avatay.png" style="height: 100%; width: 100%;" alt="">
+                        <img src="./asserts/avatay.png" style="height: 100%; width: 100%;" alt="">
                         <div class="dropdown">
                             <ul>
                                 <li id="userna"><i class="lnr lnr-user"></i></li>
-                                <li id="userph"><i class="lnr lnr-phone-handset"></i></li>
-                                <li class="diconnector" onclick="Disconnect()"> <i class="lnr lnr-power-switch"
-                                        style="color: red;"></i>Déconnecter</li>
+                                <li id="userph"><i class="lnr lnr-lock"></i></li>
+                                <li class="diconnector" id="diconnector" onclick="Disconnect('connecter')">
+                                    <i class="lnr lnr-enter" style="color: #ED7D31;"></i>
+                                    Connecter
+                                </li>
                             </ul>
                         </div>
                     </a>
@@ -141,7 +143,7 @@
                                     <br>
 
                                     <div class="loadia" id="messago">
-                                        <img src="dashboard/asserts/loaging.gif" style="height: 100%; width: 100%;"
+                                        <img src="./asserts/loaging.gif" style="height: 100%; width: 100%;"
                                             alt="Loading ...">
                                     </div>
 
@@ -219,18 +221,18 @@
         }
     </style>
 
-    <script type="text/javascript" src="dashboard/searchscripta.js" defer async id="tp-tools-js"></script>
+    <script type="text/javascript" src="./searchscripta.js" defer async id="tp-tools-js"></script>
 
-    <script data-minify="1" type="text/javascript" src="dashboard/searchscriptb.js" id="child-scripts-js"></script>
-    <script src="dashboard/routers.js"></script>
-    <script src="dashboard/htmlinjs.js"></script>
-    <script src="dashboard/script.js"></script>
-    <script src="dashboard/services/database_handl.js"></script>
-    <script src="dashboard/services/database_service.js"></script>
-    <script src="dashboard/httpsRequester.js"></script>
-    <script src="dashboard/initiator.js"></script>
-    <script src="dashboard/searchOneci.js"></script>
-    <script src="dashboard/connectedCheck.js"></script>
+    <script data-minify="1" type="text/javascript" src="./searchscriptb.js" id="child-scripts-js"></script>
+    <script src="./routers.js"></script>
+    <script src="./htmlinjs.js"></script>
+    <script src="./script.js"></script>
+    <script src="./services/database_handl.js"></script>
+    <script src="./services/database_service.js"></script>
+    <script src="./httpsRequester.js"></script>
+    <script src="./initiator.js"></script>
+    <script src="./searchOneci.js"></script>
+    <script src="./connectedCheck.js"></script>
 </body>
 
 </html>

@@ -309,7 +309,7 @@ async function LoadAgriculters(coop_id) {
         main_contaner.innerHTML = headers_html;
         const render_agriculter = document.getElementById('render_agriculter');
         render_agriculter.innerHTML = `
-         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center;">
+         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
                     <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
                     <p>En cours ...</p>
@@ -319,7 +319,7 @@ async function LoadAgriculters(coop_id) {
         const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
 
         if (agriculteurb && agriculteurb.length) {
-            document.getElementById('agri_lenthg').innerText = agriculteurb.length;
+            document.getElementById('agri_lenthg').innerText = `Total: ${agriculteurb.length}`;
             render_agriculter.innerHTML ="";
             agriculteurb.forEach((agricul) => {
                 const agriculHtml = `
