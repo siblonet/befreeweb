@@ -9,13 +9,13 @@ html {
 }
 
 :root {
-    --primary-color: #FE79A2;
-    --secondary-color: #1545CB;
+    --primary-color: #05553a;
+    --secondary-color: #087752;
     --font-color: #666;
     --bg-color: #fff;
-    --heading-color: #3f3a64;
+    --heading-color: #56756bb2;
     --border-radius: 8px;
-    --border-radius-full: 35px;
+    --border-radius-full: 18px;
     --border-color: transparent;
     --border-color-light: #eee;
     --bg-grey: #f7f7f7;
@@ -171,7 +171,7 @@ a.brand-logo {
     font-size: 18px;
     line-height: 28px;
     width: 100%;
-    height: 58px;
+    height: 48px;
     margin-bottom: 20px;
     border-width: 1px;
     border-style: solid;
