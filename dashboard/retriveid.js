@@ -52,7 +52,7 @@ const populateReal = async (id) => {
 
 
 
-        photo.src = agriculteurb.document ? agriculteurb.document : "./asserts/avatay.png";
+        photo.src = agriculteurb.document ? agriculteurb.document : "dashboard/asserts/avatay.png";
         qrcode.innerHTML = '';
         new QRCode(qrcode, {
             text: agriculteurb.qrcode ? agriculteurb.qrcode : 'Vide',
