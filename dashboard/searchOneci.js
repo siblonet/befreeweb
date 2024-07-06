@@ -311,7 +311,7 @@ async function LoadAgriculters(coop_id) {
         render_agriculter.innerHTML = `
          <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center;">
             <div style="width: 100%; height: 250px;">
-                    <img src="loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
                     <p>En cours ...</p>
             </div>
         </div>
