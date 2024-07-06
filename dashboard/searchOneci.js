@@ -308,10 +308,18 @@ async function LoadAgriculters(coop_id) {
         main_contaner.classList.add('otherstym');
         main_contaner.innerHTML = headers_html;
         const render_agriculter = document.getElementById('render_agriculter');
-        render_agriculter.innerHTML = "<p>En cours ..</p>";
+        render_agriculter.innerHTML = `
+         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center;">
+            <div style="width: 100%; height: 250px;">
+                    <img src="loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <p>En cours ...</p>
+            </div>
+        </div>
+        `;
         const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
 
         if (agriculteurb && agriculteurb.length) {
+            render_agriculter.innerHTML ="";
             agriculteurb.forEach((agricul) => {
                 const agriculHtml = `
                 <a class="products-row clicbleclass" href="agriculterdisplay.html#${agricul.identifiant_interne_exploitation}"  target="_blank">
