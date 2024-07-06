@@ -308,7 +308,7 @@ async function LoadAgriculters(coop_id) {
         main_contaner.classList.add('otherstym');
         main_contaner.innerHTML = headers_html;
         const render_agriculter = document.getElementById('render_agriculter');
-        render_agriculter.innerHTML = "";
+        render_agriculter.innerHTML = "<p>En cours ..</p>";
         const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
 
         if (agriculteurb && agriculteurb.length) {

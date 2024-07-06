@@ -21,7 +21,7 @@ const Executa = async () => {
     main_contaner.classList.add('otherstym');
     main_contaner.innerHTML = headers_html;
     const render_agriculter = document.getElementById('render_agriculter');
-    render_agriculter.innerHTML = "";
+    render_agriculter.innerHTML = "<p>En cours ..</p>";
     const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreeAgrulter`);
     if (agriculteurb && agriculteurb.length) {
         agriculteurb.forEach((agricul) => {
