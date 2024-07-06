@@ -33,7 +33,7 @@ const Executa = async () => {
     render_agriculter.innerHTML = `
         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
-                    <img src="./loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
                     <p>En cours ...</p>
             </div>
         </div>
@@ -56,7 +56,7 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                          <span>${agricul.identifiant_interne_exploitation}</span>
                      </div>
                      <div class="product-cell category">
@@ -114,7 +114,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -157,7 +157,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
