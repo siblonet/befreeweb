@@ -325,7 +325,7 @@ async function LoadAgriculters(coop_id) {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                                <img src="${agricul.document}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -334,7 +334,7 @@ async function LoadAgriculters(coop_id) {
                             </div>
                             <div class="product-cell status-cell">
                                 <span class="cell-label">Genre:</span>
-                                <span class="status active">${agricul.genre === "h" ? "Homme" : "Femme"}</span>
+                         <span class="status ${agricul.genre === "h" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : "Femme"}</span>
                             </div>
                             <div class="product-cell sales">
                                 <span class="cell-label">Prénom:</span>
