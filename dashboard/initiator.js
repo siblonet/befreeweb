@@ -11,6 +11,7 @@ async function LoadFromBackend() {
         const categorya = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCategorie');
         const cooperaa = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
         const agriculteura = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeAgrulter');
+        //console.log(cooperaa);
 
         countries = countriesa.length;
         category = categorya.length;
