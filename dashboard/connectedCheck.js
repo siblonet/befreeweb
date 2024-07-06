@@ -159,7 +159,7 @@ function ChercheAgriculters(coop_id = "0") {
                             </div>
                             <div class="product-cell status-cell">
                                 <span class="cell-label">Genre:</span>
-                         <span class="status ${agricul.genre === "h" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : "Femme"}</span>
+                         <span class="status ${agricul.genre === "h" ? "active" : agricul.genre === "H" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : agricul.genre === "H" ? "Homme" : "Femme"}</span>
                             </div>
                             <div class="product-cell sales">
                                 <span class="cell-label">Prénom:</span>
