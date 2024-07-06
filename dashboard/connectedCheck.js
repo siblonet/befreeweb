@@ -181,4 +181,9 @@ function ChercheAgriculters(coop_id = "0") {
     }
 
 }
+
+function Disconnect() {
+    sessionStorage.clear();
+    window.location.reload()
+}
 getAdmin();
