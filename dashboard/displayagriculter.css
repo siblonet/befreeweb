@@ -395,3 +395,16 @@ a.brand-logo {
         font-size: 17px;
     }
 }
+
+.form-grid.one {
+    height: 115px;
+    width: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.form-grid.one #photo {
+    height: 100%;
+    width: 100%;
+}

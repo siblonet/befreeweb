@@ -26,11 +26,12 @@ const populateReal = async (id) => {
 
     const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdItergetBefreeAgrulter/${id}`);
     if (agriculteurb) {
-        nom.innerText = agriculteurb.prenom + " " + agriculteurb.nom;
-        phone.innerText = agriculteurb.numero_telephone;
-        place_ville.innerText = agriculteurb.localite.name;
-        districk.innerText = agriculteurb.district.name;
-        photo.innerText = agriculteurb.document ? agriculteurb.document : "dashboard/asserts/avatay.png";
+        //console.log(agriculteurb);
+        nom.value = agriculteurb.prenom + " " + agriculteurb.nom;
+        phone.value = agriculteurb.numero_telephone;
+        place_ville.value = agriculteurb.localite.name;
+        districk.value = agriculteurb.district.name;
+        photo.src = agriculteurb.document ? agriculteurb.document : "./asserts/avatay.png";
 
         qrcode.innerHTML = '';
         new QRCode(qrcode, {
