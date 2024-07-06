@@ -394,6 +394,7 @@ a.brand-logo {
     p {
         font-size: 17px;
     }
+
 }
 
 .form-grid.one {
@@ -407,4 +408,21 @@ a.brand-logo {
 .form-grid.one #photo {
     height: 100%;
     width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+
+    .flex_mobil {
+        display: flex;
+        width: 100%;
+        height: 130px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-grid.one {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
 }
