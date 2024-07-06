@@ -32,9 +32,9 @@ const populateReal = async (id) => {
         districk.innerText = agriculteurb.district.name;
         photo.innerText = agriculteurb.document ? agriculteurb.document : "dashboard/asserts/avatay.png";
 
-        qrcode.innerHTML = '';        
+        qrcode.innerHTML = '';
         new QRCode(qrcode, {
-            text: agriculteurb.qrcode,
+            text: agriculteurb.qrcode ? agriculteurb.qrcode : 'Vide',
             width: 128,
             height: 128
         });
