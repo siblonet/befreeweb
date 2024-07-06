@@ -44,7 +44,7 @@ const Conneter = async () => {
 
             const tosave = `${responseData._id}°${responseData.name}°${responseData.access}`;
             sessionStorage.setItem('befree', tosave);
-            window.location.href = "dashboard/dashboard.html";
+            window.location.href = "dashboard";
 
         } else {
             document.getElementById('linkmessa').innerHTML = `

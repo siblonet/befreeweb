@@ -17,7 +17,10 @@ const headers_html = `
                     </button>
                 </div>
                 <div class="app-content-actions">
-                    <input class="search-bar" placeholder="Recherche GA-B..." type="text">
+                <div style="display: flex; column-gap: 5px;">
+                    <input class="search-bar" id="gricul-search-bar" placeholder="Recherche GA-B..." type="text">
+                    <a onclick="close_reload()" class="search-bar-close" style="padding: 2px 8px 2px 8px; border-radius: 10px; color: red; cursor: pointer; background: rgba(121, 5, 5, 0.507);">x</a>
+                </div>
                     <div class="app-content-actions-wrapper">
                         <div class="filter-button-wrapper">
                             <button class="action-button filter jsFilter">
@@ -74,14 +77,7 @@ const headers_html = `
                             </svg>
                         </button>
                         <button class="action-button grid" title="Grid View">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-grid">
-                                <rect x="3" y="3" width="7" height="7" />
-                                <rect x="14" y="3" width="7" height="7" />
-                                <rect x="14" y="14" width="7" height="7" />
-                                <rect x="3" y="14" width="7" height="7" />
-                            </svg>
+                            <span id="agri_lenthg">0</span>
                         </button>
                     </div>
                 </div>
@@ -144,7 +140,7 @@ const headers_html = `
                     <!-- @@@@@@@@@@ data in tble start @@@@@@@@-->
 
                     <div id="render_agriculter">
-                        <a class="products-row clicbleclass" href="agriculterdisplay.html#GA-BIA-001"  target="_blank">
+                        <a class="products-row clicbleclass" href="details_view#GA-BIA-001"  target="_blank">
                             <button class="cell-more-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

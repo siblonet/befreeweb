@@ -1,0 +1,14 @@
+[[redirects]]
+from = "dashboard"
+to = "/dashboard/dashboard.html"
+status = 200
+
+
+[[redirects]]
+from = "/detail_view"
+to = "/dashboard/agriculterdisplay.html"
+status = 200
+
+[[redirects]]
+from = "details_view*"
+to = "/detail_view:splat"

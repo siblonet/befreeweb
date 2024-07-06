@@ -149,7 +149,9 @@
     height: 100vh;
     overflow: hidden;
 }
-
+.search-bar-close{
+    display: none;
+}
 /* Width */
 ::-webkit-scrollbar {
     width: 10px;

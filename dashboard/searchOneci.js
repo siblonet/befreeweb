@@ -319,10 +319,11 @@ async function LoadAgriculters(coop_id) {
         const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
 
         if (agriculteurb && agriculteurb.length) {
+            document.getElementById('agri_lenthg').innerText = agriculteurb.length;
             render_agriculter.innerHTML ="";
             agriculteurb.forEach((agricul) => {
                 const agriculHtml = `
-                <a class="products-row clicbleclass" href="agriculterdisplay.html#${agricul.identifiant_interne_exploitation}"  target="_blank">
+                <a class="products-row clicbleclass" href="details_view#${agricul.identifiant_interne_exploitation}"  target="_blank">
                             <button class="cell-more-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -342,7 +343,7 @@ async function LoadAgriculters(coop_id) {
                             </div>
                             <div class="product-cell status-cell">
                                 <span class="cell-label">Genre:</span>
-                         <span class="status ${agricul.genre === "h" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : "Femme"}</span>
+                         <span class="status ${agricul.genre === "h" ? "active" : agricul.genre === "H" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : agricul.genre === "H" ? "Homme" : "Femme"}</span>
                             </div>
                             <div class="product-cell sales">
                                 <span class="cell-label">Prénom:</span>
