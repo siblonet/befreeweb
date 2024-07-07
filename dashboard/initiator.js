@@ -14,18 +14,18 @@ async function LoadFromBackend() {
             await PostCountries(countriesa);
             const categorya = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCategorie');
             const cooperaa = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
-            const agriculteura = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeAgrulter');
+            const agriculteura = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeAgrulter/0/100');
             //console.log(cooperaa);
 
             countries = countriesa.length;
             category = categorya.length;
             coopera = cooperaa.length0;
-            agriculteur = agriculteura.length;
+            agriculteur = agriculteura.agrilength;
 
             document.getElementById('idpays').innerText = `${countriesa.length}`;
             document.getElementById('idcategory').innerText = `${categorya.length}`;
             document.getElementById('idcooperative').innerText = `${cooperaa.length}`;
-            document.getElementById('idagriculture').innerText = `${agriculteura.length}`;
+            document.getElementById('idagriculture').innerText = `${agriculteura.agrilength}`;
 
         } else {
             countries = 0;
