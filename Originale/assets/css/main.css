@@ -10231,6 +10231,25 @@ input.main-search-input::placeholder {
 /**@@@@@@@@@@@@@@@@@ my css @@@@@@@@@@@@@@@@@@@@@*/
 /**@@@@@@@@@@@@@@@@@ my css @@@@@@@@@@@@@@@@@@@@@*/
 /**@@@@@@@@@@@@@@@@@ my css @@@@@@@@@@@@@@@@@@@@@*/
+.logoa:hover {
+  color: #028a61;
+}
+
+
+.logoa {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.logoa span {
+  font-weight: bold;
+}
+
+
+
+
+
 
 .diagram {
   display: flex;
