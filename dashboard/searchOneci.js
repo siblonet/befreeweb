@@ -325,12 +325,12 @@ async function LoadAgriculters(coop_id) {
             </div>
         </div>
         `;
-        const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}`);
+        const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdgetBefreeAgrulter/${coop_id}/0/100`);
 
-        if (agriculteurb && agriculteurb.length) {
-            document.getElementById('agri_lenthg').innerText = `Total: ${agriculteurb.length}`;
+        if (agriculteurb.agriculter && agriculteurb.agriculter.length) {
+            document.getElementById('agri_lenthg').innerText = `Total: ${agriculteurb.agrilength}`;
             render_agriculter.innerHTML = "";
-            agriculteurb.forEach((agricul) => {
+            agriculteurb.agriculter.forEach((agricul) => {
                 const agriculHtml = `
                 <a class="products-row clicbleclass" href="details_view#${agricul.identifiant_interne_exploitation}"  target="_blank">
                             <button class="cell-more-button">
@@ -352,7 +352,7 @@ async function LoadAgriculters(coop_id) {
                             </div>
                             <div class="product-cell status-cell">
                                 <span class="cell-label">Genre:</span>
-                         <span class="status ${agricul.genre === "h" ? "active" : agricul.genre === "H" ? "active" : "disabled"}">${agricul.genre === "h" ? "Homme" : agricul.genre === "H" ? "Homme" : "Femme"}</span>
+                         <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                             </div>
                             <div class="product-cell sales">
                                 <span class="cell-label">Prénom:</span>
