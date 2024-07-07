@@ -425,3 +425,19 @@
 .table-image th {
     vertical-align: middle;
 }
+
+
+.codivorea {
+    display: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 20% 0 20%;
+}
+
+.codivore {
+    height: 300px;
+    border-radius: 7px;
+    overflow: hidden;
+}

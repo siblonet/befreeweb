@@ -57,6 +57,7 @@ const CountrySearch = async (nni) => {
         } else if (nni.length > 3) {
             countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
         }
+
     }
 };
 
@@ -175,6 +176,14 @@ const SelectedCounty = async (encodedId) => {
     pays = name.nom;
     document.getElementById('idpays').innerText = `${displayCharacter(name.nom)}`;
     document.getElementById('idcategory').innerText = `${categoriesServed.length}`;
+
+    
+    if (name.nom === "Côte d'Ivoire" || name.nom === "225") {
+        document.getElementById('codivorea').style.display = "block"
+    } else {
+        console.log(name.nom);
+        document.getElementById('codivorea').style.display = "none"
+    }
 };
 
 
@@ -320,7 +329,7 @@ async function LoadAgriculters(coop_id) {
 
         if (agriculteurb && agriculteurb.length) {
             document.getElementById('agri_lenthg').innerText = `Total: ${agriculteurb.length}`;
-            render_agriculter.innerHTML ="";
+            render_agriculter.innerHTML = "";
             agriculteurb.forEach((agricul) => {
                 const agriculHtml = `
                 <a class="products-row clicbleclass" href="details_view#${agricul.identifiant_interne_exploitation}"  target="_blank">
