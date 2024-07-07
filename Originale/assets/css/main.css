@@ -10256,7 +10256,6 @@ input.main-search-input::placeholder {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  overflow: hidden !important;
   width: 100%;
   padding-left: 4%;
   padding-right: 4%;
@@ -10290,6 +10289,21 @@ input.main-search-input::placeholder {
 
 .diagram .text_hom p {
   color: #787986;
+}
+
+
+@media only screen and (max-width: 991px) {
+  .diagram {
+    height: auto !important;
+  }
+
+  .diagram .imagerom {
+    width: 100%;
+  }
+
+  .diagram .text_hom {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
