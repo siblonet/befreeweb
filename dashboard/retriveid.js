@@ -41,44 +41,53 @@ const populateReal = async (id) => {
 
     const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/ByIdItergetBefreeAgrulter/${id}`);
 
-    if (agriculteurb.agriculter) {
+    if (agriculteurb.nom) {
+        const agricu = await requesttoBackend('GET', `BefreeAgriculter/getByIdBefreeAgrulter/${agriculteurb._id}`);
+        /*operateur: {} as BefreeAgrulter,
+        agricole: {} as BefreeExploitationAgricole,
+        proprierteur: {} as BefreeProprieteurAgricole,
+        travailleur: {} as BefreeTravailleurAgricole,
+        inspecteur: {} as BefreeInspecteurAgricole,
+        ExtraExploitation: {} as BefreeExtraExploitationAgricole,
+       
+        */
         //console.log(agriculteurb);
-        nom.value = agriculteurb.agriculter.nom;
-        prenom.value = agriculteurb.agriculter.prenom;
-        genre.value = agriculteurb.agriculter.genre === "h" ? "Homme" : agriculteurb.agriculter.genre === "H" ? "Homme" : "Femme";
-        annee_naissance.value = agriculteurb.agriculter.annee_naissance;
-        phone.value = agriculteurb.agriculter.numero_telephone;
-        identifant_interne_exploitaion.value = agriculteurb.agriculter.identifant_interne_exploitaion;
 
-        numero_etat_civil.value = agriculteurb.agriculter.numero_etat_civil;
-        numero_piece_identite.value = agriculteurb.agriculter.numero_piece_identite;
-        numero_securite_sociale.value = agriculteurb.agriculter.numero_securite_sociale;
-        localite.value = agriculteurb.agriculter.localite.name;
-        district.value = agriculteurb.agriculter.district.name;
+        nom.value = agricu.operateur.nom;
+        prenom.value = agricu.operateur.prenom;
+        genre.value = agricu.operateur.genre;
+        annee_naissance.value = agricu.operateur.annee_naissance;
+        phone.value = agricu.operateur.numero_telephone;
+        numero_etat_civil.value = agricu.operateur.numero_etat_civil;
+        numero_piece_identite.value = agricu.operateur.numero_piece_identite;
+        numero_securite_sociale.value = agricu.operateur.numero_securite_sociale;
 
-        photo.src = agriculteurb.agriculter.document ? agriculteurb.agriculter.document : "dashboard/asserts/avatay.png";
+        photo.src = agricu.operateur.document ? agricu.operateur.document : "dashboard/asserts/avatay.png";
         qrcode.innerHTML = '';
         new QRCode(qrcode, {
-            text: agriculteurb.agriculter.qrcode ? agriculteurb.agriculter.qrcode : 'Vide',
+            text: agricu.operateur.qrcode ? agricu.operateur.qrcode : 'Vide',
             width: 128,
             height: 128
         });
-    }
 
-    if (agriculteurb.agriculture) {
+        if (agricu.agriculture) {
+            identifant_interne_exploitaion.value = agricu.operateur.identifant_interne_exploitaion;
+            localite.value = agricu.agriculter.localite.name;
+            district.value = agricu.agriculter.district.name;
 
-        superficie_exploitation.value = agriculteurb.agriculture.superficie_exploitation;
-        type_exploitation_agricole.value = agriculteurb.agriculture.type_exploitation_agricole;
-        nombre_unite_agricole.value = agriculteurb.agriculture.nombre_unite_agricole;
-        nombre_culture_certifiees.value = agriculteurb.agriculture.nombre_culture_certifiees;
-        inspecteur.value = agriculteurb.agriculture.inspecteur.name;
-        nom_proprietaire_exploitation.value = agriculteurb.agriculture.nom_proprietaire_exploitation;
-        prenom_proprietaire_exploitation.value = agriculteurb.agriculture.prenom_proprietaire_exploitation;
-        numero_telephone_proprietaire_exploitation.value = agriculteurb.agriculture.numero_telephone_proprietaire_exploitation;
-        latitute.value = agriculteurb.agriculture.latitute;
-        longitude.value = agriculteurb.agriculture.longitude;
-        map.href = `https://www.google.com/maps?q=${agriculteurb.agriculture.latitute},${agriculteurb.agriculture.longitude}`;;
+            superficie_exploitation.value = agricu.agriculture.superficie_exploitation;
+            type_exploitation_agricole.value = agricu.agriculture.type_exploitation_agricole;
+            nombre_unite_agricole.value = agricu.agriculture.nombre_unite_agricole;
+            nombre_culture_certifiees.value = agricu.agriculture.nombre_culture_certifiees;
+            inspecteur.value = agricu.agriculture.inspecteur.name;
+            nom_proprietaire_exploitation.value = agricu.agriculture.nom_proprietaire_exploitation;
+            prenom_proprietaire_exploitation.value = agricu.agriculture.prenom_proprietaire_exploitation;
+            numero_telephone_proprietaire_exploitation.value = agricu.agriculture.numero_telephone_proprietaire_exploitation;
+            latitute.value = agricu.agriculture.latitute;
+            longitude.value = agricu.agriculture.longitude;
+            map.href = `https://www.google.com/maps?q=${agricu.agriculture.latitute},${agricu.agriculture.longitude}`;;
 
+        }
     }
 
 }
