@@ -1,3 +1,9 @@
+.site-main {
+    overflow-y: scroll !important;
+    height: 100vh;
+}
+
+
 .noticationmenu {
     width: 100%;
     height: 70px !important;
@@ -433,11 +439,18 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: 0 20% 0 20%;
 }
 
 .codivore {
-    height: 300px;
     border-radius: 7px;
-    overflow: hidden;
 }
+
+
+.odeaaa {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+}
+

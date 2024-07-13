@@ -177,7 +177,7 @@ const SelectedCounty = async (encodedId) => {
     document.getElementById('idpays').innerText = `${displayCharacter(name.nom)}`;
     document.getElementById('idcategory').innerText = `${categoriesServed.length}`;
 
-    
+
     if (name.nom === "Côte d'Ivoire" || name.nom === "225") {
         document.getElementById('codivorea').style.display = "block"
     } else {
@@ -251,9 +251,31 @@ const SelectedCooperative = async (encodedId) => {
     if (!selectedcount.classList.contains('selectedcount')) {
         selectedcount.classList.add('selectedcount');
     }
+    if (nacategorme.nom === "RIA-ASCA") {
+        document.getElementById('codivorea').style.display = "block"
+    } else {
+        document.getElementById('codivorea').style.display = "none"
+        document.getElementById('codivorea').style.display = "none"
+        document.getElementById('codivorea').style.display = "none"
+    }
+
     selectedcount.innerHTML += `<a class="" style="color: #03c98e"> ${nacategorme.nom}:</a>`;
 
     document.getElementById('respond').innerHTML = `
+                    <div class="odeaaa" id="">   
+                        <a  style="height: 50%; width: 50%;" class="" id="" href="./asserts/ESTATIO.pdf"  target="_blank">
+                            <img src="./asserts/cafecaca.png"
+                            style="height: 50%; width: 50%;" alt="">
+                        </a>
+
+                        <a style="height: 50%; width: 30%;" class="" id="" href="./asserts/ascapdd.JPEG"  target="_blank">
+                            <img src="./asserts/ascap.png"
+                            style="height: 50%; width: 50%;" alt="">
+                        </a>
+                    </div>
+
+
+
                     <div class="valideuserpar">
                         <div class="guidmessage">
                             <p style="color: #087752;">Cliquez sur valider pour voir les agriculteurs</p>
@@ -277,13 +299,13 @@ const SelectedCooperative = async (encodedId) => {
                                 </div>
 
                                 <div>
-                                    <p>Coopératives: </p>
+                                    <p>Coop: </p>
                                     <p style="color: #ED7D31; font-weight: bold;" id="idcooperative">${displayCharacter(nacategorme.nom)}</p>
                                 </div>
 
                                 <div>
                                     <p>Agriculteurs: </p>
-                                    <p style="color: #ED7D31; font-weight: bold;" id="idagriculture"></p>
+                                    <p style="color: #ED7D31; font-weight: bold;" id="idagriculture">1311</p>
                                 </div>
                             </div>
                         </div>
