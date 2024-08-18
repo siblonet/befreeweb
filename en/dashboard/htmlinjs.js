@@ -78,7 +78,7 @@ const headers_html = `
                 <div class="products-area-wrapper tableView">
                     <div class="products-header">
                         <div class="product-cell image"  title="Unique Internal Farm Identifier">
-                            Identifiant I.E
+                            I.E Identity
                             <button class="sort-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
                                     <path fill="currentColor"
@@ -87,7 +87,7 @@ const headers_html = `
                             </button>
                         </div>
                         <div class="product-cell category">
-                            Année de naissance
+                            Year of Birth
                             <button class="sort-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
                                     <path fill="currentColor"
