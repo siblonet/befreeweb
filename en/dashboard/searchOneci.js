@@ -264,12 +264,12 @@ const SelectedCooperative = async (encodedId) => {
     document.getElementById('respond').innerHTML = `
                     <div class="odeaaa" id="">   
                         <a  style="height: 50%; width: 50%;" class="" id="" href="en/dashboard/asserts/ESTATIO.pdf"  target="_blank">
-                            <img src="dashboard/asserts/cafecaca.png"
+                            <img src="en/dashboard/asserts/cafecaca.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
 
                         <a style="height: 50%; width: 30%;" class="" id="" href="en/dashboard/asserts/ascapdd.JPEG"  target="_blank">
-                            <img src="dashboard/asserts/ascap.png"
+                            <img src="en/dashboard/asserts/ascap.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
                     </div>
