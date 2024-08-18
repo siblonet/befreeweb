@@ -6,7 +6,7 @@ const FilterRequest = async (coop_id) => {
   render_agriculter.innerHTML = `
      <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
         <div style="width: 100%; height: 250px;">
-                <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                <img src="en/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
                 <p>En cours ...</p>
         </div>
     </div>
@@ -30,27 +30,27 @@ const FilterRequest = async (coop_id) => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">
-                            <span class="cell-label">Année de naissance:</span>
+                            <span class="cell-label">Year of Birth:</span>
                             ${agricul.annee_naissance}
                         </div>
                         <div class="product-cell status-cell">
-                            <span class="cell-label">Genre:</span>
+                            <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                         </div>
                         <div class="product-cell sales">
-                            <span class="cell-label">Prénom:</span>
+                            <span class="cell-label">First Name:</span>
                             ${agricul.prenom}
                         </div>
                         <div class="product-cell stock">
-                            <span class="cell-label">Nom:</span>
+                            <span class="cell-label">Last Name:</span>
                             ${agricul.nom}
                         </div>
                         <div class="product-cell price">
-                            <span class="cell-label">Prenom:</span>
+                            <span class="cell-label">First Name:</span>
                             ${agricul.numero_telephone}
                         </div>
                     </a>
@@ -64,7 +64,7 @@ const FilterRequest = async (coop_id) => {
         <div style="width: 100%; height: 250px;">
           <div style="height: 40%; width: 200px;">
           </div>
-                <p>Vide (0)</p>
+                <p>Empty (0)</p>
           
         </div>
     </div>
@@ -76,8 +76,8 @@ const FilterRequest = async (coop_id) => {
 const ResetFilter = async () => {
   const categori_listing = document.getElementById("categori_listing");
   const coop_listing = document.getElementById("coop_listing");
-  categori_listing.innerHTML = "<option>Patientez encours ...</option>";
-  coop_listing.innerHTML = "<option>Patientez encours ...</option>";
+  categori_listing.innerHTML = "<option>Loading please wait ...</option>";
+  coop_listing.innerHTML = "<option>Loading please wait ...</option>";
   const ready_tofilter = document.getElementById("ready_tofilter");
   ready_tofilter.style.display = "none";
 
@@ -86,8 +86,8 @@ const ResetFilter = async () => {
   render_agriculter.innerHTML = `
      <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
         <div style="width: 100%; height: 250px;">
-                <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
-                <p>En cours ...</p>
+                <img src="en/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                <p>Loading ...</p>
         </div>
     </div>
     `;
@@ -110,27 +110,27 @@ const ResetFilter = async () => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">
-                            <span class="cell-label">Année de naissance:</span>
+                            <span class="cell-label">Year of Birth:</span>
                             ${agricul.annee_naissance}
                         </div>
                         <div class="product-cell status-cell">
-                            <span class="cell-label">Genre:</span>
+                            <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                         </div>
                         <div class="product-cell sales">
-                            <span class="cell-label">Prénom:</span>
+                            <span class="cell-label">First Name:</span>
                             ${agricul.prenom}
                         </div>
                         <div class="product-cell stock">
-                            <span class="cell-label">Nom:</span>
+                            <span class="cell-label">Last Name:</span>
                             ${agricul.nom}
                         </div>
                         <div class="product-cell price">
-                            <span class="cell-label">Prenom:</span>
+                            <span class="cell-label">First Name:</span>
                             ${agricul.numero_telephone}
                         </div>
                     </a>
@@ -144,7 +144,7 @@ const ResetFilter = async () => {
         <div style="width: 100%; height: 250px;">
           <div style="height: 40%; width: 200px;">
           </div>
-                <p>Vide (0)</p>
+                <p>Empty (0)</p>
           
         </div>
     </div>
@@ -165,13 +165,13 @@ async function filteringDataRendering() {
   let cooperaFiltro = [];
   const countries = await GetAllCountries();
 
-  paysListing.innerHTML = "<option>Choisissez Pays</option>";
-  categoriListing.innerHTML = "<option>Choisis Pays d'abord</option>";
-  coopListing.innerHTML = "<option>Choisis Catégorie d'abord</option>";
+  paysListing.innerHTML = "<option>Select Country</option>";
+  categoriListing.innerHTML = "<option>Country First</option>";
+  coopListing.innerHTML = "<option>Category First</option>";
 
   paysListing.addEventListener('change', async function () {
-    categoriListing.innerHTML = "<option>Choisissez Catégorie</option>";
-    coopListing.innerHTML = "<option>Choisis Catégorie d'abord</option>";
+    categoriListing.innerHTML = "<option>Choose Category</option>";
+    coopListing.innerHTML = "<option>Choose Category First</option>";
     const paysId = countries.find(co => co.nom === this.value);
     if (paysId) {
       categoFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCategorie/${paysId._id}`);
@@ -180,14 +180,14 @@ async function filteringDataRendering() {
           categoriListing.innerHTML += `<option value="${cat.name}">${cat.name}</option>`;
         });
       } else {
-        categoriListing.innerHTML = "<option>Catégorie vide (0)</option>";
-        coopListing.innerHTML = "<option>Dépend de catégorie</option>";
+        categoriListing.innerHTML = "<option>Category empty (0)</option>";
+        coopListing.innerHTML = "<option>Depends on Category</option>";
       }
     }
   });
 
   categoriListing.addEventListener('change', async function () {
-    coopListing.innerHTML = "<option>Choisissez Coopérative</option>";
+    coopListing.innerHTML = "<option>Choose Cooperative</option>";
     const categoId = categoFiltro.find(co => co.name === this.value);
     if (categoId) {
       cooperaFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCooperative/${categoId._id}`);
@@ -196,7 +196,7 @@ async function filteringDataRendering() {
           coopListing.innerHTML += `<option value="${coop.nom}">${coop.nom}</option>`;
         });
       } else {
-        categoriListing.innerHTML = "<option>Coopérative vide (0)</option>";
+        categoriListing.innerHTML = "<option>Cooperative empty (0)</option>";
       }
     }
   });

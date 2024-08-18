@@ -54,10 +54,10 @@ const populateReal = async (id) => {
         numero_securite_sociale.value = agricu.operateur.numero_securite_sociale;
         identifant_interne_exploitaion.value = agricu.operateur.identifant_interne_exploitaion;
 
-        photo.src = agricu.operateur.document ? agricu.operateur.document : "dashboard/asserts/avatay.png";
+        photo.src = agricu.operateur.document ? agricu.operateur.document : "en/dashboard/asserts/avatay.png";
         qrcode.innerHTML = '';
         new QRCode(qrcode, {
-            text: agricu.operateur.qrcode ? agricu.operateur.qrcode : 'Vide',
+            text: agricu.operateur.qrcode ? agricu.operateur.qrcode : 'Empty',
             width: 128,
             height: 128
         });

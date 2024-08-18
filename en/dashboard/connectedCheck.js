@@ -13,13 +13,13 @@ function getAdmin() {
         diconnector.setAttribute("onclick", `Disconnect('diconnect')`);
 
         diconnector.innerHTML = `
-        <i class="lnr lnr-power-switch" style="color: red;"></i>Déconnecter
+        <i class="lnr lnr-power-switch" style="color: red;"></i>Sign-Out
         `;
 
         LoadFromBackend();
         Executa()
     } else {
-        document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> Visiteur`;
+        document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> Visitor`;
         document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> 457000`;
         LoadFromBackend()
     }
@@ -33,8 +33,8 @@ const Executa = async () => {
     render_agriculter.innerHTML = `
         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
-                    <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
-                    <p>En cours ...</p>
+                    <img src="en/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <p>Loading ...</p>
             </div>
         </div>
         `;
@@ -58,27 +58,27 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                          <span>${agricul.identifiant_interne_exploitation}</span>
                      </div>
                      <div class="product-cell category">
-                         <span class="cell-label">Année de naissance:</span>
+                         <span class="cell-label">Year of Birth:</span>
                          ${agricul.annee_naissance}
                      </div>
                      <div class="product-cell status-cell">
-                         <span class="cell-label">Genre:</span>
+                         <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                      </div>
                      <div class="product-cell sales">
-                         <span class="cell-label">Prénom:</span>
+                         <span class="cell-label">First Name:</span>
                          ${agricul.prenom}
                      </div>
                      <div class="product-cell stock">
-                         <span class="cell-label">Nom:</span>
+                         <span class="cell-label">Last Name:</span>
                          ${agricul.nom}
                      </div>
                      <div class="product-cell price">
-                         <span class="cell-label">Prenom:</span>
+                         <span class="cell-label">First Name:</span>
                          ${agricul.numero_telephone}
                      </div>
                  </a>
@@ -116,27 +116,27 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
-                                <span class="cell-label">Année de naissance:</span>
+                                <span class="cell-label">Year of Birth:</span>
                                 ${agricul.annee_naissance}
                             </div>
                             <div class="product-cell status-cell">
-                                <span class="cell-label">Genre:</span>
+                                <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                             </div>
                             <div class="product-cell sales">
-                                <span class="cell-label">Prénom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.prenom}
                             </div>
                             <div class="product-cell stock">
-                                <span class="cell-label">Nom:</span>
+                                <span class="cell-label">Last Name:</span>
                                 ${agricul.nom}
                             </div>
                             <div class="product-cell price">
-                                <span class="cell-label">Prenom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.numero_telephone}
                             </div>
                         </a>
@@ -159,27 +159,27 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
-                                <span class="cell-label">Année de naissance:</span>
+                                <span class="cell-label">Year of Birth:</span>
                                 ${agricul.annee_naissance}
                             </div>
                             <div class="product-cell status-cell">
-                                <span class="cell-label">Genre:</span>
+                                <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                             </div>
                             <div class="product-cell sales">
-                                <span class="cell-label">Prénom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.prenom}
                             </div>
                             <div class="product-cell stock">
-                                <span class="cell-label">Nom:</span>
+                                <span class="cell-label">Last Name:</span>
                                 ${agricul.nom}
                             </div>
                             <div class="product-cell price">
-                                <span class="cell-label">Prenom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.numero_telephone}
                             </div>
                         </a>
@@ -201,7 +201,7 @@ function Disconnect(what) {
         diconnector.setAttribute("onclick", `Disconnect('connecter')`);
 
         diconnector.innerHTML = `
-        <i class="lnr lnr-enter" style="color: red;"></i>Connecter
+        <i class="lnr lnr-enter" style="color: red;"></i>Sign In
         `;
 
     }
