@@ -264,12 +264,12 @@ const SelectedCooperative = async (encodedId) => {
     document.getElementById('respond').innerHTML = `
                     <div class="odeaaa" id="">   
                         <a  style="height: 50%; width: 50%;" class="" id="" href="dashboard/asserts/ESTATIO.pdf"  target="_blank">
-                            <img src="dashboard/asserts/cafecaca.png"
+                            <img src="fr/dashboard/asserts/cafecaca.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
 
                         <a style="height: 50%; width: 30%;" class="" id="" href="dashboard/asserts/ascapdd.JPEG"  target="_blank">
-                            <img src="dashboard/asserts/ascap.png"
+                            <img src="fr/dashboard/asserts/ascap.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
                     </div>
@@ -283,7 +283,7 @@ const SelectedCooperative = async (encodedId) => {
                          <br>
                         <div class="valideuser" id="valideuser">
                             <div id="userface">
-                                <img src="../logo.png" style="height: 85%; width: 85%;" alt="User Face">
+                                <img src="../../logo.png" style="height: 85%; width: 85%;" alt="User Face">
                             </div>
 
                             <div id="countriesdata">
@@ -342,7 +342,7 @@ async function LoadAgriculters(coop_id) {
         render_agriculter.innerHTML = `
          <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
-                    <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                    <img src="fr/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
                     <p>En cours ...</p>
             </div>
         </div>
@@ -365,7 +365,7 @@ async function LoadAgriculters(coop_id) {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "fr/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
