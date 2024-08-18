@@ -1,0 +1,456 @@
+.site-main {
+    overflow-y: scroll !important;
+    height: 100vh;
+}
+
+
+.noticationmenu {
+    width: 100%;
+    height: 70px !important;
+    background-color: #fefefe;
+    position: fixed;
+    box-shadow: 0 6px 10px 0 rgba(28, 9, 80, .25);
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+}
+
+.allin {
+    height: 100% !important;
+    background-color: #fefefe;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noticationmenu .logoa:hover {
+    color: #028a61;
+}
+
+
+.noticationmenu .logoa {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.noticationmenu .logoa span {
+    font-weight: bold;
+}
+
+.noticationmenu .allin .iconnotification {
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f3eeeeda;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.noticationmenu .allin .iconnotification span {
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.363);
+    color: red;
+    position: absolute;
+    font-size: 12px;
+    top: 10px;
+    right: 15%;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 15px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 530px) and (max-width: 900px) {
+    .noticationmenu .allin .iconnotification span {
+        right: 25%;
+    }
+}
+
+
+
+@media (max-width: 530px) {
+    .noticationmenu .allin .iconnotification span {
+        right: 35%;
+    }
+}
+
+.noticationmenu .allin .iconnotification:hover .dropdowna {
+    display: block;
+}
+
+.noticationmenu .allin .iconnotification .dropdowna {
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eeeeee;
+    position: absolute;
+    right: 7%;
+    border-radius: 7px;
+    cursor: default !important;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    display: none;
+}
+
+
+.noticationmenu .allin .iconprofile {
+    height: 37px;
+    width: 37px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fefefe;
+}
+
+.noticationmenu .allin .iconprofile:hover .dropdown {
+    display: block;
+}
+
+.noticationmenu .allin .iconprofile .dropdown {
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eeeeee;
+    position: absolute;
+    right: 0%;
+    border-radius: 7px;
+    cursor: default !important;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    display: none;
+}
+
+.noticationmenu .allin .iconprofile .dropdown ul {
+    list-style-type: none;
+    text-align: left !important;
+    line-height: 35px;
+}
+
+.noticationmenu .allin .iconprofile .dropdown ul li {
+    color: #aaaaaa;
+}
+
+.noticationmenu .allin .iconprofile .dropdown ul li.diconnector {
+    cursor: pointer;
+}
+
+.noticationmenu .allin .iconprofile .dropdown ul li.diconnector:hover {
+    color: rgb(243, 43, 87);
+}
+
+.noticationmenu .allin .iconprofile .dropdown ul li i {
+    color: #087752;
+}
+
+
+.otherstym {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.search-bar-close {
+    display: none;
+}
+
+/* Width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    /* For Edge */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(195, 207, 244, 0.493);
+    /* Fallback color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+}
+
+/* Width and color for Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff rgba(195, 207, 244, 0.493);
+}
+
+/* Width and color for Edge */
+* {
+    -ms-overflow-style: none;
+    /* Hide scrollbar in Edge */
+}
+
+*::-webkit-scrollbar {
+    width: thin;
+    /* For Firefox */
+    height: thin;
+    /* For Firefox */
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    /* Fallback color for Firefox */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #fd8a06;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #f0b434;
+}
+
+.searchBoar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.searchBoar .inputBg {
+    width: 300px;
+    border-radius: 12px !important;
+}
+
+.searchBoar i {
+    margin-left: -35px;
+    font-size: large;
+    font-weight: bold;
+    color: #fd8a06;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 20px;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    cursor: pointer;
+}
+
+.loadia {
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    height: 200px;
+    width: 100%;
+    align-self: center;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    overflow: hidden;
+    display: none;
+    text-align: center;
+}
+
+.valideuserpar {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .valideuserpar {
+        padding: 0 20% 0 20%;
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .valideuserpar {
+        padding: 0% 0% 0% 0%;
+    }
+}
+
+
+
+.valideuser {
+    align-items: center;
+    border-radius: 10px;
+    height: 200px;
+    width: 100%;
+    align-self: center;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    align-self: center;
+}
+
+.valideuser #userface {
+    width: 35%;
+    text-align: center;
+}
+
+.valideuser #countriesdata {
+    width: 65%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.valideuser #countriesdata div {
+    display: flex;
+    column-gap: 5%;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
+    line-height: -10px !important;
+}
+
+.valideuser #countriesdata div p {
+    line-height: 0px;
+}
+
+@media (max-width: 620px) {
+    .searchBoar {
+        width: 100%;
+    }
+}
+
+.dropdown .lnr {
+    padding-right: 12px !important;
+}
+
+
+#nni {
+    box-sizing: border-box;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#nni:focus {
+    width: 100%;
+}
+
+
+.selectedcount {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+}
+
+.searchBoar .fingerprin {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 6px 10px 0 rgba(5, 66, 66, 0.418);
+    justify-content: center;
+    margin: 10px;
+}
+
+.searchBoar .photo {
+    height: 33px;
+    width: 33px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px 0 rgba(9, 80, 80, 0.25);
+    cursor: pointer;
+}
+
+.valideuserpar .btn_older {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.valideuserpar .btn_older .btno {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+    padding: 5px;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+.valideuserpar .btn_older .btno.vali {
+    color: rgb(0, 123, 255);
+    background-color: rgba(0, 123, 255, 0.418);
+    box-shadow: 0 5px 5px 0 rgba(0, 15, 15, 0.418);
+}
+
+
+.valideuserpar .btno.anul {
+    color: rgb(255, 51, 0);
+    background-color: rgba(255, 51, 0, 0.418);
+    box-shadow: 0 5px 5px 0 rgba(0, 15, 15, 0.418);
+}
+
+.guidmessage {
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+}
+
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@ Table @@@@@@@@@@@@@@@@@@@@@@@*/
+
+.table-image td,
+.table-image th {
+    vertical-align: middle;
+}
+
+
+.codivorea {
+    display: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.codivore {
+    border-radius: 7px;
+}
+
+
+.odeaaa {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+}
+

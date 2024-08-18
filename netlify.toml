@@ -1,6 +1,11 @@
 [[redirects]]
 from = "dashboard"
-to = "/dashboard/dashboard.html"
+to = "/fr/dashboard/dashboard.html"
+status = 200
+
+[[redirects]]
+from = "dashboarden"
+to = "/en/dashboard/dashboard.html"
 status = 200
 
 
