@@ -204,7 +204,7 @@ const SelectedCategory = async (encodedId) => {
 
     const nni = document.getElementById('nni');
     nni.value = "";
-    nni.placeholder = "Selectionnez ou Cherchez une coopérative";
+    nni.placeholder = "Select or search a cooperative";
     nni.blur();
 
     const cooperatives = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCooperative');
