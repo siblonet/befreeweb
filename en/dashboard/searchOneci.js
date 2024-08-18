@@ -396,7 +396,7 @@ async function LoadAgriculters(coop_id) {
         }
         style_Beheviors_init()
     } else {
-        window.location.href = "../Autorisation.html"
+        window.location.href = "en/Autorisation.html"
     }
 
 }

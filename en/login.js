@@ -4,7 +4,7 @@ const Conneter = async () => {
 
     if (invphone) {
         loading.removeAttribute("onclick");
-        loading.innerText = "En cours ...";
+        loading.innerText = "loading ...";
         const data = {
             access: invphone,
         };
