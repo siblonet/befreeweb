@@ -12,3 +12,15 @@ status = 200
 [[redirects]]
 from = "details_view*"
 to = "/detail_view:splat"
+
+
+[[redirects]]
+from = "/fr"
+to = "/fr/index.html"
+status = 200
+
+
+[[redirects]]
+from = "/en"
+to = "/en/index.html"
+status = 200
