@@ -55,7 +55,7 @@ const CountrySearch = async (nni) => {
                 countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCounty('${encodedId}')">${pays.nom}</a>`;
             });
         } else if (nni.length > 3) {
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
         }
 
     }
@@ -83,10 +83,10 @@ const CategorySearch = async (nni) => {
                 countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCategory('${encodedId}')">${categ.name}</a>`;
             });
         } else if (nni.length > 3) {
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
         }
     } else if (nni.length > 3) {
-        countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
+        countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
     } else {
         countriesid.innerHTML = "";
         categoriesServed.slice(0, 5).forEach((categor) => {
@@ -117,10 +117,10 @@ const CooperativeSearch = async (nni) => {
                 countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCooperative('${encodedId}')">${categ.nom}</a>`;
             });
         } else if (nni.length > 3) {
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
         }
     } else if (nni.length > 3) {
-        countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} N'y est pas!</a>`;
+        countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
     } else {
         countriesid.innerHTML = "";
         cooperativeServed.slice(0, 5).forEach((categor) => {
@@ -151,7 +151,7 @@ const SelectedCounty = async (encodedId) => {
 
     const nni = document.getElementById('nni');
     nni.value = "";
-    nni.placeholder = "Selectionnez ou Cherchez une catégorie";
+    nni.placeholder = "Select or search for a category";
     nni.blur();
 
     const categories = await requesttoBackend('GET', 'BefreeAgriculter/getAllBefreeCategorie');
@@ -168,10 +168,10 @@ const SelectedCounty = async (encodedId) => {
             });
         } else {
             categoriesServed = [];
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">Pas de catégorie pour ${name.nom}</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">No categories for ${name.nom}</a>`;
         }
     } else {
-        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Catégorie Vide</a>`;
+        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Categories Empty</a>`;
     }
     pays = name.nom;
     document.getElementById('idpays').innerText = `${displayCharacter(name.nom)}`;
@@ -263,12 +263,12 @@ const SelectedCooperative = async (encodedId) => {
 
     document.getElementById('respond').innerHTML = `
                     <div class="odeaaa" id="">   
-                        <a  style="height: 50%; width: 50%;" class="" id="" href="dashboard/asserts/ESTATIO.pdf"  target="_blank">
+                        <a  style="height: 50%; width: 50%;" class="" id="" href="en/dashboard/asserts/ESTATIO.pdf"  target="_blank">
                             <img src="dashboard/asserts/cafecaca.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
 
-                        <a style="height: 50%; width: 30%;" class="" id="" href="dashboard/asserts/ascapdd.JPEG"  target="_blank">
+                        <a style="height: 50%; width: 30%;" class="" id="" href="en/dashboard/asserts/ascapdd.JPEG"  target="_blank">
                             <img src="dashboard/asserts/ascap.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
@@ -278,7 +278,7 @@ const SelectedCooperative = async (encodedId) => {
 
                     <div class="valideuserpar">
                         <div class="guidmessage">
-                            <p style="color: #087752;">Cliquez sur valider pour voir les agriculteurs</p>
+                            <p style="color: #087752;">Click "Validate" to see the farmers</p>
                         </div>
                          <br>
                         <div class="valideuser" id="valideuser">
@@ -289,12 +289,12 @@ const SelectedCooperative = async (encodedId) => {
                             <div id="countriesdata">
                                 <br>
                                 <div>
-                                    <p>Pays: </p>
+                                    <p>Country: </p>
                                     <p style="color: #ED7D31; font-weight: bold;" id="idpays">${displayCharacter(pays)}</p>
                                 </div>
 
                                 <div>
-                                    <p>Catégories: </p>
+                                    <p>Categories: </p>
                                     <p style="color: #ED7D31; font-weight: bold;" id="idcategory">${displayCharacter(categoryb)}</p>
                                 </div>
 
@@ -304,18 +304,18 @@ const SelectedCooperative = async (encodedId) => {
                                 </div>
 
                                 <div>
-                                    <p>Agriculteurs: </p>
+                                    <p>Farmers: </p>
                                     <p style="color: #ED7D31; font-weight: bold;" id="idagriculture">1311</p>
                                 </div>
                             </div>
                         </div>
                         <div class="btn_older">
                             <a class="btno vali" onclick="LoadAgriculters('${id}')">
-                                Valider
+                                Validate
                             </a>
 
                             <a class="btno anul" onclick="CancellAll()">
-                                Retour
+                                Reset
                             </a>
                         </div>
                     </div>
@@ -343,7 +343,7 @@ async function LoadAgriculters(coop_id) {
          <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
             <div style="width: 100%; height: 250px;">
                     <img src="dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
-                    <p>En cours ...</p>
+                    <p>Loading ...</p>
             </div>
         </div>
         `;
@@ -365,27 +365,27 @@ async function LoadAgriculters(coop_id) {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
-                                <span class="cell-label">Année de naissance:</span>
+                                <span class="cell-label">Year of Birth:</span>
                                 ${agricul.annee_naissance}
                             </div>
                             <div class="product-cell status-cell">
-                                <span class="cell-label">Genre:</span>
+                                <span class="cell-label">Gender:</span>
                          <span class="status ${agricul.genre === "HOMME" ? "active" : "disabled"}">${agricul.genre}</span>
                             </div>
                             <div class="product-cell sales">
-                                <span class="cell-label">Prénom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.prenom}
                             </div>
                             <div class="product-cell stock">
-                                <span class="cell-label">Nom:</span>
+                                <span class="cell-label">Last Name:</span>
                                 ${agricul.nom}
                             </div>
                             <div class="product-cell price">
-                                <span class="cell-label">Prenom:</span>
+                                <span class="cell-label">First Name:</span>
                                 ${agricul.numero_telephone}
                             </div>
                         </a>
