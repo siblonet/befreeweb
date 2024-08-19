@@ -71,7 +71,7 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/flage.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
                          <span>${agricul.nom}</span>
                      </div>
                      <div class="product-cell category">
@@ -122,7 +122,7 @@ const FilterRender = async (url) => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/flage.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
                          <span>${agricul.nom ? agricul.nom : agricul.name}</span>
                      </div>
                      <div class="product-cell category">
@@ -167,7 +167,7 @@ function ChercheAgriculters(coop_id = "0") {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/flage.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
                          <span>${agricul.nom}</span>
                      </div>
                      <div class="product-cell category">
@@ -198,7 +198,7 @@ function ChercheAgriculters(coop_id = "0") {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "./asserts/flage.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
                          <span>${agricul.nom}</span>
                      </div>
                      <div class="product-cell category">
