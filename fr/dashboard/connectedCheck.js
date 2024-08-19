@@ -193,7 +193,7 @@ function ChercheAgriculters(coop_id = "0") {
 
 function Disconnect(what) {
     if (what === "connecter") {
-        window.location.href = "../Autorisation.html"
+        window.location.href = "fr/Autorisation.html"
     } else {
         sessionStorage.clear();
         window.location.reload();
