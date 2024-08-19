@@ -2,10 +2,10 @@ let AGRICO = [];
 
 function getAdmin() {
     const token = sessionStorage.getItem('befree');
-    if (!token) {
-        //const splo = token.split("°");
-        const name = "visitor"//splo[1];
-        const phone = "0554468"//splo[2];
+    if (token) {
+        const splo = token.split("°");
+        const name = splo[1];
+        const phone = splo[2];
         document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> ${name}`;
         document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> ${phone}`;
         const diconnector = document.getElementById('diconnector');
