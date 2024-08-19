@@ -34,3 +34,13 @@ status = 200
 from = "/en"
 to = "/en/index.html"
 status = 200
+
+
+[[redirects]]
+from = "/modifier"
+to = "/admin/editabledata.html"
+status = 200
+
+[[redirects]]
+from = "editable*"
+to = "/modifier:splat"

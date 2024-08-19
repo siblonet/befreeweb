@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Modification</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin/displayagriculter.css" type="text/css" media="all" />
+    <link rel="icon" href="../../logo.png" sizes="32x32" />
+    <meta name="theme-color" content="#FE79A2" />
+    <style>
+        /* Width */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            /* For Edge */
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: #eeeeee;
+            /* Fallback color */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: #05553a;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #05553a;
+        }
+
+        /* Width and color for Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #05553a #eeeeee;
+        }
+
+        /* Width and color for Edge */
+        * {
+            -ms-overflow-style: none;
+            /* Hide scrollbar in Edge */
+        }
+
+        *::-webkit-scrollbar {
+            width: thin;
+            /* For Firefox */
+            height: thin;
+            /* For Firefox */
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #FE79A2;
+            /* Fallback color for Firefox */
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #fd8a06;
+            border-radius: 10px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #f0b434;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="row map-content-9">
+            <div class="info-grids">
+                <form class="">
+                    <div class="form-grid">
+                        <div class="input-field">
+                            <label>Nom Francais</label>
+                            <input id="nom" type="text" value="Nom Complet">
+                        </div>
+                        <div class="input-field">
+                            <label>Nom Anglais</label>
+                            <input id="prenom" type="text" value="Nom Complet">
+                        </div>
+                        <div class="input-field">
+                            <label>Extension</label>
+                            <input id="genre" type="text" value="None">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="admin/qrcode.min.js"></script>
+    <script src="admin/routers.js"></script>
+    <script src="admin/httpsRequester.js"></script>
+    <script src="admin/retriveid.js"></script>
+    <script src="admin/fontawesome.js"></script>
+</body>
+
+</html>

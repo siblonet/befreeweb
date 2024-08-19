@@ -60,7 +60,7 @@ const Executa = async () => {
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
-         <a class="products-row clicbleclass" href="details_view#${agricul._id}"  target="_blank">
+         <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -111,7 +111,7 @@ const FilterRender = async (url) => {
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
-         <a class="products-row clicbleclass" href="details_view#${agricul._id}"  target="_blank">
+         <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -156,7 +156,7 @@ function ChercheAgriculters(coop_id = "0") {
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
-                <a class="products-row clicbleclass" href="details_view#${agricul._id}"  target="_blank">
+                <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -187,7 +187,7 @@ function ChercheAgriculters(coop_id = "0") {
         render_agriculter.innerHTML = "";
         AGRICO.forEach((agricul) => {
             const agriculHtml = `
-                <a class="products-row clicbleclass" href="details_view#${agricul._id}"  target="_blank">
+                <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
