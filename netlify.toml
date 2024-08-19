@@ -8,6 +8,11 @@ from = "dashboarden"
 to = "/en/dashboard/dashboard.html"
 status = 200
 
+[[redirects]]
+from = "admin"
+to = "admin/dashboard.html"
+status = 200
+
 
 [[redirects]]
 from = "/detail_view"

@@ -36,23 +36,21 @@ const Executa = async () => {
         </div>
         `;
 
+
     document.getElementById('data_to_load').addEventListener('change', function () {
         const selectedValue = this.value;
         FilterRender(selectedValue);
 
         if (selectedValue === 'getAllBefreePays') {
             document.getElementById('loaded_data').innerText = "Pays";
-            // Load countries data
+
         } else if (selectedValue === 'getAllBefreeCategorie') {
-
             document.getElementById('loaded_data').innerText = "Catégories";
-
-
         } else if (selectedValue === 'getAllBefreeCooperative') {
             document.getElementById('loaded_data').innerText = "Coopérative";
         }
     });
-    
+
     const agriculteurb = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePays`);
 
     if (agriculteurb && agriculteurb.length) {
