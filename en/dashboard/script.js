@@ -6,7 +6,7 @@ const FilterRequest = async (coop_id) => {
   render_agriculter.innerHTML = `
      <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
         <div style="width: 100%; height: 250px;">
-                <img src="en/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                <img src="./loadingc.gif" style="height: 80%; width: 200px;" alt="">
                 <p>En cours ...</p>
         </div>
     </div>
@@ -30,7 +30,7 @@ const FilterRequest = async (coop_id) => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">
@@ -86,7 +86,7 @@ const ResetFilter = async () => {
   render_agriculter.innerHTML = `
      <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
         <div style="width: 100%; height: 250px;">
-                <img src="en/dashboard/loadingc.gif" style="height: 80%; width: 200px;" alt="">
+                <img src="./loadingc.gif" style="height: 80%; width: 200px;" alt="">
                 <p>Loading ...</p>
         </div>
     </div>
@@ -110,7 +110,7 @@ const ResetFilter = async () => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">

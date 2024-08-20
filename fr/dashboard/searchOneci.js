@@ -159,7 +159,7 @@ const SelectedCounty = async (encodedId) => {
     countriesid.innerHTML = "";
 
     if (categories && categories.length) {
-        categoriesServed = categories.filter((de) => de.pays === id);
+        categoriesServed = categories.filter((de) => de.pays._id === id);
         if (categoriesServed.length) {
 
             categoriesServed.slice(0, 5).forEach((categor) => {
@@ -212,7 +212,7 @@ const SelectedCategory = async (encodedId) => {
 
 
     if (cooperatives && cooperatives.length) {
-        cooperativeServed = cooperatives.filter((de) => de.categorie === id);
+        cooperativeServed = cooperatives.filter((de) => de.categorie._id === id);
         if (cooperativeServed.length) {
             countriesid.innerHTML = "";
 
@@ -225,7 +225,7 @@ const SelectedCategory = async (encodedId) => {
             countriesid.innerHTML = `<a class="fingerprin" style="color: red">Pas de cooperative pour ${nacategorme.nom}</a>`;
         }
     } else {
-        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Catégorie Vide</a>`;
+        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Cooperative Vide</a>`;
     };
     categoryb = nacategorme.name;
     document.getElementById('idcategory').innerText = `${displayCharacter(nacategorme.name)}`;

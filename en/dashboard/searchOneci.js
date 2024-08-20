@@ -37,13 +37,22 @@ const CountrySearch = async (nni) => {
     if (nni && nni.length) {
         const countries = await GetAllCountries();
 
-        const country = countries.filter((eds) =>
-            eds.nomen.startsWith(nni.toUpperCase()) ||
-            eds.nomen.startsWith(nni.toLowerCase()) ||
-            eds.nomen.startsWith(capitalize(nni)) ||
-            eds.telcode.startsWith(nni) ||
-            eds.nomen.startsWith(nni)
-        );
+        const country = countries.filter((eds) => {
+            // Check if 'eds' object and its properties exist
+            if (!eds || !eds.nomen || !eds.telcode) {
+                return false; // Skip this element if any property is missing
+            }
+
+            // Perform filtering
+            return (
+                eds.nomen.startsWith(nni.toUpperCase()) ||
+                eds.nomen.startsWith(nni.toLowerCase()) ||
+                eds.nomen.startsWith(capitalize(nni)) ||
+                eds.telcode.startsWith(nni) ||
+                eds.nomen.startsWith(nni)
+            );
+        });
+
 
         const countriesid = document.getElementById('countriesid');
 
@@ -159,7 +168,7 @@ const SelectedCounty = async (encodedId) => {
     countriesid.innerHTML = "";
 
     if (categories && categories.length) {
-        categoriesServed = categories.filter((de) => de.pays === id);
+        categoriesServed = categories.filter((de) => de.pays._id === id);
         if (categoriesServed.length) {
 
             categoriesServed.slice(0, 5).forEach((categor) => {
@@ -212,7 +221,7 @@ const SelectedCategory = async (encodedId) => {
 
 
     if (cooperatives && cooperatives.length) {
-        cooperativeServed = cooperatives.filter((de) => de.categorie === id);
+        cooperativeServed = cooperatives.filter((de) => de.categorie._id === id);
         if (cooperativeServed.length) {
             countriesid.innerHTML = "";
 
@@ -222,10 +231,10 @@ const SelectedCategory = async (encodedId) => {
             });
         } else {
             cooperativeServed = [];
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">Pas de cooperative pour ${nacategorme.nomen}</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">No cooperative for ${nacategorme.nomen}</a>`;
         }
     } else {
-        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Catégorie Vide</a>`;
+        countriesid.innerHTML = `<a class="fingerprin" style="color: red">Cooperative Empty</a>`;
     };
     categoryb = nacategorme.nomen;
     document.getElementById('idcategory').innerText = `${displayCharacter(nacategorme.nomen)}`;
@@ -263,13 +272,13 @@ const SelectedCooperative = async (encodedId) => {
 
     document.getElementById('respond').innerHTML = `
                     <div class="odeaaa" id="">   
-                        <a  style="height: 50%; width: 50%;" class="" id="" href="en/dashboard/asserts/ESTATIO.pdf"  target="_blank">
-                            <img src="en/dashboard/asserts/cafecaca.png"
+                        <a  style="height: 50%; width: 50%;" class="" id="" href="./asserts/ESTATIO.pdf"  target="_blank">
+                            <img src="./asserts/cafecaca.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
 
-                        <a style="height: 50%; width: 30%;" class="" id="" href="en/dashboard/asserts/ascapdd.JPEG"  target="_blank">
-                            <img src="en/dashboard/asserts/ascap.png"
+                        <a style="height: 50%; width: 30%;" class="" id="" href="./asserts/ascapdd.JPEG"  target="_blank">
+                            <img src="./asserts/ascap.png"
                             style="height: 50%; width: 50%;" alt="">
                         </a>
                     </div>
@@ -283,7 +292,7 @@ const SelectedCooperative = async (encodedId) => {
                          <br>
                         <div class="valideuser" id="valideuser">
                             <div id="userface">
-                                <img src="../logo.png" style="height: 85%; width: 85%;" alt="User Face">
+                                <img src="../../logo.png" style="height: 85%; width: 85%;" alt="User Face">
                             </div>
 
                             <div id="countriesdata">
@@ -365,7 +374,7 @@ async function LoadAgriculters(coop_id) {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
