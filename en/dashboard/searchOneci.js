@@ -251,7 +251,7 @@ const SelectedCooperative = async (encodedId) => {
     if (!selectedcount.classList.contains('selectedcount')) {
         selectedcount.classList.add('selectedcount');
     }
-    if (nacategorme.nomen === "RIA-ASCA") {
+    if (nacategorme.nom === "RIA-ASCA") {
         document.getElementById('codivorea').style.display = "block"
     } else {
         document.getElementById('codivorea').style.display = "none"
@@ -382,7 +382,7 @@ async function LoadAgriculters(coop_id) {
                             </div>
                             <div class="product-cell stock">
                                 <span class="cell-label">Last Name:</span>
-                                ${agricul.nomen}
+                                ${agricul.nom}
                             </div>
                             <div class="product-cell price">
                                 <span class="cell-label">First Name:</span>

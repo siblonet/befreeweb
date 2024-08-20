@@ -177,7 +177,7 @@ async function filteringDataRendering() {
       categoFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCategorie/${paysId._id}`);
       if (categoFiltro && categoFiltro.length) {
         categoFiltro.forEach(cat => {
-          categoriListing.innerHTML += `<option value="${catnomen}">${catnomen}</option>`;
+          categoriListing.innerHTML += `<option value="${cat.nomen}">${cat.nomen}</option>`;
         });
       } else {
         categoriListing.innerHTML = "<option>Category empty (0)</option>";
@@ -188,7 +188,7 @@ async function filteringDataRendering() {
 
   categoriListing.addEventListener('change', async function () {
     coopListing.innerHTML = "<option>Choose Cooperative</option>";
-    const categoId = categoFiltro.find(co => conomen === this.value);
+    const categoId = categoFiltro.find(co => co.nomen === this.value);
     if (categoId) {
       cooperaFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCooperative/${categoId._id}`);
       if (cooperaFiltro && cooperaFiltro.length) {
