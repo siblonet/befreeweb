@@ -30,7 +30,7 @@ const FilterRequest = async (coop_id) => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">
@@ -110,7 +110,7 @@ const ResetFilter = async () => {
                             </svg>
                         </button>
                         <div class="product-cell image">
-                     <img src="${agricul.document ? agricul.document : "./asserts/avatay.png"}" alt="product">
+                     <img src="${agricul.document ? agricul.document : "en/dashboard/asserts/avatay.png"}" alt="product">
                             <span>${agricul.identifiant_interne_exploitation}</span>
                         </div>
                         <div class="product-cell category">
