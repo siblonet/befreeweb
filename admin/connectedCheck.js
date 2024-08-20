@@ -2,12 +2,12 @@ let AGRICO = [];
 
 function getAdmin() {
     const token = sessionStorage.getItem('befree');
-    if (token) {
-        const splo = token.split("°");
+    if (!token) {
+        /*const splo = token.split("°");
         const name = splo[1];
-        const phone = splo[2];
-        document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> ${name}`;
-        document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> ${phone}`;
+        const phone = splo[2];*/
+        document.getElementById('userna').innerHTML = `<i class="lnr lnr-user"></i> ${"name"}`;
+        document.getElementById('userph').innerHTML = `<i class="lnr lnr-lock"></i> ${"phone"}`;
         const diconnector = document.getElementById('diconnector');
         diconnector.setAttribute("onclick", `Disconnect('diconnect')`);
 
@@ -60,7 +60,7 @@ const Executa = async () => {
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
-         <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
+                <a class="products-row clickable-class" href="editable#${agricul._id}:${agricul.nom || agricul.name}:${agricul.nomen}:${agricul.telcode || agricul.pays?.nom || agricul.categorie?.name}:Donnée sur le Pays:getAllBefreePays" target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -92,6 +92,9 @@ const Executa = async () => {
 }
 
 const FilterRender = async (url) => {
+    document.getElementById('extension').innerText = `${url === "getAllBefreePays" ? "Extension" : url === "getAllBefreeCooperative" ? "Catégories" : "Pays"}`;
+    document.querySelector(".filter-menu").classList.toggle("active");
+
     const render_agriculter = document.getElementById('render_agriculter');
     render_agriculter.innerHTML = `
         <div style="width: 100%; padding: 10px; border-radius: 10px; background: #ffffff; text-align: center; margin-top: 20px">
@@ -111,112 +114,40 @@ const FilterRender = async (url) => {
         render_agriculter.innerHTML = "";
         agriculteurb.forEach((agricul) => {
             const agriculHtml = `
-         <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
-                     <button class="cell-more-button">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" class="feather feather-more-vertical">
-                             <circle cx="12" cy="12" r="1" />
-                             <circle cx="12" cy="5" r="1" />
-                             <circle cx="12" cy="19" r="1" />
-                         </svg>
-                     </button>
-                     <div class="product-cell image">
+                <a class="products-row clickable-class" href="editable#${agricul._id}:${agricul.nom || agricul.name}:${agricul.nomen}:${agricul.telcode || agricul.pays?.nom || agricul.categorie?.name}:${url === 'getAllBefreePays' ? 'Donnée sur le Pays' : url === 'getAllBefreeCooperative' ? 'Donnée sur la Coopérative' : 'Donnée sur la Catégorie'}:${url}" target="_blank">
+                    <button class="cell-more-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="12" cy="5" r="1"></circle>
+                            <circle cx="12" cy="19" r="1"></circle>
+                        </svg>
+                    </button>
+                    <div class="product-cell image">
                          <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
-                         <span>${agricul.nom ? agricul.nom : agricul.name}</span>
-                     </div>
-                     <div class="product-cell category">
-                         <span class="cell-label">Nom Englais:</span>
-                         ${!agricul.nomen ? "Vide" : agricul.nomen}
-                     </div>
-                     <div class="product-cell status-cell">
-                         <span class="cell-label">${url === "getAllBefreePays" ? "Extension" : "Id du Pays"}</span>
-                         <span class="status ${agricul.telcode === "225" ? "active" : "disabled"}">${!agricul.telcode ? agricul.pays ? agricul.pays : agricul.categorie ? agricul.categorie : "000" : agricul.telcode}</span>
-                     </div>
-                 </a>
-
-         `;
+                        <span>${agricul.nom || agricul.name}</span>
+                    </div>
+                    <div class="product-cell category">
+                        <span class="cell-label">Nom Anglais:</span>
+                        ${agricul.nomen || 'Vide'}
+                    </div>
+                    <div class="product-cell status-cell">
+                        <span class="cell-label">
+                            ${url === 'getAllBefreePays' ? 'Extension' : url === 'getAllBefreeCooperative' ? 'Catégories' : 'Pays'}
+                        </span>
+                        <span class="status ${agricul.telcode === '225' ? 'active' : 'disabled'}">
+                            ${agricul.telcode || agricul.pays?.nom || agricul.categorie?.name || '000'}
+                        </span>
+                    </div>
+                </a>
+            `;
             render_agriculter.innerHTML += agriculHtml;
         });
+
     }
 }
 
-
-function ChercheAgriculters(coop_id = "0") {
-    const render_agriculter = document.getElementById('render_agriculter');
-    const agriculteurb = AGRICO.filter((eds) =>
-        eds.nom.startsWith(coop_id.toUpperCase()) ||
-        eds.telcode.startsWith(coop_id.toLowerCase()) ||
-        eds.nomen.startsWith(capitalize(coop_id)) ||
-        eds.nom.startsWith(coop_id) ||
-        eds.nomen.startsWith(coop_id)
-    );
-
-    if (agriculteurb && agriculteurb.length) {
-        render_agriculter.innerHTML = "";
-        agriculteurb.forEach((agricul) => {
-            const agriculHtml = `
-                <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
-                     <button class="cell-more-button">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" class="feather feather-more-vertical">
-                             <circle cx="12" cy="12" r="1" />
-                             <circle cx="12" cy="5" r="1" />
-                             <circle cx="12" cy="19" r="1" />
-                         </svg>
-                     </button>
-                     <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
-                         <span>${agricul.nom}</span>
-                     </div>
-                     <div class="product-cell category">
-                         <span class="cell-label">Nom Englais:</span>
-                         ${!agricul.nomen ? "Vide" : agricul.nomen}
-                     </div>
-                     <div class="product-cell status-cell">
-                         <span class="cell-label">Extension:</span>
-                         <span class="status ${agricul.telcode === "225" ? "active" : "disabled"}">${!agricul.telcode ? "000" : agricul.telcode}</span>
-                     </div>
-                 </a>
-
-                `;
-            render_agriculter.innerHTML += agriculHtml;
-        });
-    } else if (coop_id.length < 2 && AGRICO.length > 0) {
-        render_agriculter.innerHTML = "";
-        AGRICO.forEach((agricul) => {
-            const agriculHtml = `
-                <a class="products-row clicbleclass" href="editable#${agricul._id}"  target="_blank">
-                     <button class="cell-more-button">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                             stroke-linejoin="round" class="feather feather-more-vertical">
-                             <circle cx="12" cy="12" r="1" />
-                             <circle cx="12" cy="5" r="1" />
-                             <circle cx="12" cy="19" r="1" />
-                         </svg>
-                     </button>
-                     <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "admin/asserts/flage.png"}" alt="product">
-                         <span>${agricul.nom}</span>
-                     </div>
-                     <div class="product-cell category">
-                         <span class="cell-label">Nom Englais:</span>
-                         ${!agricul.nomen ? "Vide" : agricul.nomen}
-                     </div>
-                     <div class="product-cell status-cell">
-                         <span class="cell-label">Extension:</span>
-                         <span class="status ${agricul.telcode === "225" ? "active" : "disabled"}">${!agricul.telcode ? "000" : agricul.telcode}</span>
-                     </div>
-                 </a>
-
-                `;
-            render_agriculter.innerHTML += agriculHtml;
-        });
-    }
-
-}
 
 function Disconnect(what) {
     if (what === "connecter") {
