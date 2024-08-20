@@ -38,11 +38,11 @@ const CountrySearch = async (nni) => {
         const countries = await GetAllCountries();
 
         const country = countries.filter((eds) =>
-            eds.nom.startsWith(nni.toUpperCase()) ||
-            eds.nom.startsWith(nni.toLowerCase()) ||
-            eds.nom.startsWith(capitalize(nni)) ||
+            eds.nomen.startsWith(nni.toUpperCase()) ||
+            eds.nomen.startsWith(nni.toLowerCase()) ||
+            eds.nomen.startsWith(capitalize(nni)) ||
             eds.telcode.startsWith(nni) ||
-            eds.nom.startsWith(nni)
+            eds.nomen.startsWith(nni)
         );
 
         const countriesid = document.getElementById('countriesid');
@@ -52,7 +52,7 @@ const CountrySearch = async (nni) => {
 
             country.forEach((pays) => {
                 const encodedId = encodeURIComponent(pays._id);
-                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCounty('${encodedId}')">${pays.nom}</a>`;
+                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCounty('${encodedId}')">${pays.nomen}</a>`;
             });
         } else if (nni.length > 3) {
             countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
@@ -69,10 +69,10 @@ const CategorySearch = async (nni) => {
     const countriesid = document.getElementById('countriesid');
     if (nni && nni.length && categoriesServed.length > 0) {
         const categors = categoriesServed.filter((eds) =>
-            eds.name.startsWith(nni.toUpperCase()) ||
-            eds.name.startsWith(nni.toLowerCase()) ||
-            eds.name.startsWith(capitalize(nni)) ||
-            eds.name.startsWith(nni)
+            eds.nomen.startsWith(nni.toUpperCase()) ||
+            eds.nomen.startsWith(nni.toLowerCase()) ||
+            eds.nomen.startsWith(capitalize(nni)) ||
+            eds.nomen.startsWith(nni)
         );
 
         if (categors.length) {
@@ -80,7 +80,7 @@ const CategorySearch = async (nni) => {
 
             categors.forEach((categ) => {
                 const encodedId = encodeURIComponent(categ._id);
-                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCategory('${encodedId}')">${categ.name}</a>`;
+                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCategory('${encodedId}')">${categ.nomen}</a>`;
             });
         } else if (nni.length > 3) {
             countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
@@ -90,7 +90,7 @@ const CategorySearch = async (nni) => {
     } else {
         countriesid.innerHTML = "";
         categoriesServed.slice(0, 5).forEach((categor) => {
-            countriesid.innerHTML += `<a class="fingerprin">${categor.name}</a>`;
+            countriesid.innerHTML += `<a class="fingerprin">${categor.nomen}</a>`;
         });
     }
 };
@@ -102,10 +102,10 @@ const CooperativeSearch = async (nni) => {
     const countriesid = document.getElementById('countriesid');
     if (nni && nni.length && cooperativeServed.length > 0) {
         const categors = cooperativeServed.filter((eds) =>
-            eds.nom.startsWith(nni.toUpperCase()) ||
-            eds.nom.startsWith(nni.toLowerCase()) ||
-            eds.nom.startsWith(capitalize(nni)) ||
-            eds.nom.startsWith(nni)
+            eds.nomen.startsWith(nni.toUpperCase()) ||
+            eds.nomen.startsWith(nni.toLowerCase()) ||
+            eds.nomen.startsWith(capitalize(nni)) ||
+            eds.nomen.startsWith(nni)
         );
 
 
@@ -114,7 +114,7 @@ const CooperativeSearch = async (nni) => {
 
             categors.forEach((categ) => {
                 const encodedId = encodeURIComponent(categ._id);
-                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCooperative('${encodedId}')">${categ.nom}</a>`;
+                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCooperative('${encodedId}')">${categ.nomen}</a>`;
             });
         } else if (nni.length > 3) {
             countriesid.innerHTML = `<a class="fingerprin" style="color: red">${nni} No longer available!</a>`;
@@ -124,7 +124,7 @@ const CooperativeSearch = async (nni) => {
     } else {
         countriesid.innerHTML = "";
         cooperativeServed.slice(0, 5).forEach((categor) => {
-            countriesid.innerHTML += `<a class="fingerprin">${categor.nom}</a>`;
+            countriesid.innerHTML += `<a class="fingerprin">${categor.nomen}</a>`;
         });
     }
 };
@@ -147,7 +147,7 @@ const SelectedCounty = async (encodedId) => {
     if (!selectedcount.classList.contains('selectedcount')) {
         selectedcount.classList.add('selectedcount');
     }
-    selectedcount.innerHTML += `<a class="" style="color: #03b07c"> ${name.nom}:</a>`;
+    selectedcount.innerHTML += `<a class="" style="color: #03b07c"> ${name.nomen}:</a>`;
 
     const nni = document.getElementById('nni');
     nni.value = "";
@@ -164,24 +164,24 @@ const SelectedCounty = async (encodedId) => {
 
             categoriesServed.slice(0, 5).forEach((categor) => {
                 const encodedId = encodeURIComponent(categor._id);
-                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCategory('${encodedId}')">${categor.name}</a>`;
+                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCategory('${encodedId}')">${categor.nomen}</a>`;
             });
         } else {
             categoriesServed = [];
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">No categories for ${name.nom}</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">No categories for ${name.nomen}</a>`;
         }
     } else {
         countriesid.innerHTML = `<a class="fingerprin" style="color: red">Categories Empty</a>`;
     }
-    pays = name.nom;
-    document.getElementById('idpays').innerText = `${displayCharacter(name.nom)}`;
+    pays = name.nomen;
+    document.getElementById('idpays').innerText = `${displayCharacter(name.nomen)}`;
     document.getElementById('idcategory').innerText = `${categoriesServed.length}`;
 
 
-    if (name.nom === "Côte d'Ivoire" || name.nom === "225") {
+    if (name.nomen === "Côte d'Ivoire" || name.telcode === "225") {
         document.getElementById('codivorea').style.display = "block"
     } else {
-        console.log(name.nom);
+        console.log(name.nomen);
         document.getElementById('codivorea').style.display = "none"
     }
 };
@@ -200,7 +200,7 @@ const SelectedCategory = async (encodedId) => {
     if (!selectedcount.classList.contains('selectedcount')) {
         selectedcount.classList.add('selectedcount');
     }
-    selectedcount.innerHTML += `<a class="" style="color: #03c98e"> ${nacategorme.name}:</a>`;
+    selectedcount.innerHTML += `<a class="" style="color: #03c98e"> ${nacategorme.nomen}:</a>`;
 
     const nni = document.getElementById('nni');
     nni.value = "";
@@ -218,20 +218,20 @@ const SelectedCategory = async (encodedId) => {
 
             cooperativeServed.slice(0, 5).forEach((coop) => {
                 const encodedId = encodeURIComponent(coop._id);
-                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCooperative('${encodedId}')">${coop.nom}</a>`;
+                countriesid.innerHTML += `<a class="fingerprin" onclick="SelectedCooperative('${encodedId}')">${coop.nomen}</a>`;
             });
         } else {
             cooperativeServed = [];
-            countriesid.innerHTML = `<a class="fingerprin" style="color: red">Pas de cooperative pour ${nacategorme.nom}</a>`;
+            countriesid.innerHTML = `<a class="fingerprin" style="color: red">Pas de cooperative pour ${nacategorme.nomen}</a>`;
         }
     } else {
         countriesid.innerHTML = `<a class="fingerprin" style="color: red">Catégorie Vide</a>`;
     };
-    categoryb = nacategorme.name;
-    document.getElementById('idcategory').innerText = `${displayCharacter(nacategorme.name)}`;
+    categoryb = nacategorme.nomen;
+    document.getElementById('idcategory').innerText = `${displayCharacter(nacategorme.nomen)}`;
     document.getElementById('idcooperative').innerText = `${cooperativeServed.length}`;
 
-    /* document.getElementById('idpays').innerText = `${name.nom}`;
+    /* document.getElementById('idpays').innerText = `${name.nomen}`;
      document.getElementById('idcategory').innerText = `${categoriesServed.length}`;
      document.getElementById('idcooperative').innerText = `${cooperaa.length}`;
      document.getElementById('idagriculture').innerText = `${agriculteura.length}`;*/
@@ -251,7 +251,7 @@ const SelectedCooperative = async (encodedId) => {
     if (!selectedcount.classList.contains('selectedcount')) {
         selectedcount.classList.add('selectedcount');
     }
-    if (nacategorme.nom === "RIA-ASCA") {
+    if (nacategorme.nomen === "RIA-ASCA") {
         document.getElementById('codivorea').style.display = "block"
     } else {
         document.getElementById('codivorea').style.display = "none"
@@ -259,7 +259,7 @@ const SelectedCooperative = async (encodedId) => {
         document.getElementById('codivorea').style.display = "none"
     }
 
-    selectedcount.innerHTML += `<a class="" style="color: #03c98e"> ${nacategorme.nom}:</a>`;
+    selectedcount.innerHTML += `<a class="" style="color: #03c98e"> ${nacategorme.nomen}:</a>`;
 
     document.getElementById('respond').innerHTML = `
                     <div class="odeaaa" id="">   
@@ -300,7 +300,7 @@ const SelectedCooperative = async (encodedId) => {
 
                                 <div>
                                     <p>Coop: </p>
-                                    <p style="color: #ED7D31; font-weight: bold;" id="idcooperative">${displayCharacter(nacategorme.nom)}</p>
+                                    <p style="color: #ED7D31; font-weight: bold;" id="idcooperative">${displayCharacter(nacategorme.nomen)}</p>
                                 </div>
 
                                 <div>
@@ -324,7 +324,7 @@ const SelectedCooperative = async (encodedId) => {
 
     //document.getElementById('idagriculture').innerText = `${agriculteura.length}`;
 
-    /* document.getElementById('idpays').innerText = `${name.nom}`;
+    /* document.getElementById('idpays').innerText = `${name.nomen}`;
      document.getElementById('idcategory').innerText = `${categoriesServed.length}`;
      document.getElementById('idcooperative').innerText = `${cooperaa.length}`;
      document.getElementById('idagriculture').innerText = `${agriculteura.length}`;
@@ -382,7 +382,7 @@ async function LoadAgriculters(coop_id) {
                             </div>
                             <div class="product-cell stock">
                                 <span class="cell-label">Last Name:</span>
-                                ${agricul.nom}
+                                ${agricul.nomen}
                             </div>
                             <div class="product-cell price">
                                 <span class="cell-label">First Name:</span>

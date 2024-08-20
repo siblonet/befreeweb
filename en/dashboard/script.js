@@ -172,12 +172,12 @@ async function filteringDataRendering() {
   paysListing.addEventListener('change', async function () {
     categoriListing.innerHTML = "<option>Choose Category</option>";
     coopListing.innerHTML = "<option>Choose Category First</option>";
-    const paysId = countries.find(co => co.nom === this.value);
+    const paysId = countries.find(co => co.nomen === this.value);
     if (paysId) {
       categoFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCategorie/${paysId._id}`);
       if (categoFiltro && categoFiltro.length) {
         categoFiltro.forEach(cat => {
-          categoriListing.innerHTML += `<option value="${cat.name}">${cat.name}</option>`;
+          categoriListing.innerHTML += `<option value="${catnomen}">${catnomen}</option>`;
         });
       } else {
         categoriListing.innerHTML = "<option>Category empty (0)</option>";
@@ -188,12 +188,12 @@ async function filteringDataRendering() {
 
   categoriListing.addEventListener('change', async function () {
     coopListing.innerHTML = "<option>Choose Cooperative</option>";
-    const categoId = categoFiltro.find(co => co.name === this.value);
+    const categoId = categoFiltro.find(co => conomen === this.value);
     if (categoId) {
       cooperaFiltro = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePayCooperative/${categoId._id}`);
       if (cooperaFiltro && cooperaFiltro.length) {
         cooperaFiltro.forEach(coop => {
-          coopListing.innerHTML += `<option value="${coop.nom}">${coop.nom}</option>`;
+          coopListing.innerHTML += `<option value="${coop.nomen}">${coop.nomen}</option>`;
         });
       } else {
         categoriListing.innerHTML = "<option>Cooperative empty (0)</option>";
@@ -202,7 +202,7 @@ async function filteringDataRendering() {
   });
 
   coopListing.addEventListener('change', function () {
-    const cooperaId = cooperaFiltro.find(co => co.nom === this.value);
+    const cooperaId = cooperaFiltro.find(co => co.nomen === this.value);
     if (cooperaId) {
       const applyFilter = document.getElementById("applay_filter");
       applyFilter.setAttribute("onclick", `FilterRequest('${cooperaId._id}')`);
@@ -214,7 +214,7 @@ async function filteringDataRendering() {
 
   if (countries && countries.length) {
     countries.forEach(country => {
-      paysListing.innerHTML += `<option value="${country.nom}">${country.nom}</option>`;
+      paysListing.innerHTML += `<option value="${country.nomen}">${country.nomen}</option>`;
     });
   }
 }
