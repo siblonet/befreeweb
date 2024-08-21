@@ -44,3 +44,21 @@ status = 200
 [[redirects]]
 from = "editable*"
 to = "/modifier:splat"
+
+
+[[redirects]]
+from = "/addpay"
+to = "/admin/ajouterpays.html"
+status = 200
+
+
+[[redirects]]
+from = "/addcoop"
+to = "/admin/ajoutercooperative.html"
+status = 200
+
+
+[[redirects]]
+from = "/addcatego"
+to = "/admin/ajoutercategorie.html"
+status = 200

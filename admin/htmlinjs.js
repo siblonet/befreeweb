@@ -41,9 +41,9 @@ const headers_html = `
                             </div>
 
                         </div>
-                        <button class="action-button list active" title="Ajouter un" onclick="AddDada()">
+                        <a id="add_data_creation" href="addpay" class="action-button list active" title="Ajouter" target="_blank">
                             Ajouter
-                        </button>
+                        </a>
                         <button class="action-button grid" title="Grid View">
                             <span id="agri_lenthg">Total: ...</span>
                         </button>

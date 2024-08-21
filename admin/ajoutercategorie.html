@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Ajouter Catégorie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin/displayagriculter.css" type="text/css" media="all" />
+    <link rel="icon" href="../../logo.png" sizes="32x32" />
+    <meta name="theme-color" content="#FE79A2" />
+    <style>
+        /* Width */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            /* For Edge */
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: #eeeeee;
+            /* Fallback color */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: #05553a;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #05553a;
+        }
+
+        /* Width and color for Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #05553a #eeeeee;
+        }
+
+        /* Width and color for Edge */
+        * {
+            -ms-overflow-style: none;
+            /* Hide scrollbar in Edge */
+        }
+
+        *::-webkit-scrollbar {
+            width: thin;
+            /* For Firefox */
+            height: thin;
+            /* For Firefox */
+        }
+
+        *::-webkit-scrollbar-track {
+            background-color: #FE79A2;
+            /* Fallback color for Firefox */
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #fd8a06;
+            border-radius: 10px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #f0b434;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="row map-content-9">
+            <div class="info-grids">
+                <h4 style="align-self: center; text-align: center;">Ajouter d'une Catégorie</h4>
+                <form class="">
+                    <div class="form-grid">
+                        <div class="input-field">
+                            <label>Nom Francais</label>
+                            <input id="nomfrench" type="text" placeholder="Nom de la Catégorie en frençais" value="">
+                        </div>
+                        <div class="input-field">
+                            <label>Nom Anglais</label>
+                            <input id="nomenglish" type="text" placeholder="Nom de la Catégorie en anglis" value="">
+                        </div>
+                        <div class="input-field">
+                            <label>Selectionnez Pays</label>
+                            <select id="pays_listing">
+                                <option>Patientez encours ...</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-around; align-items: center; width: 100%;">
+            <div class="button-wrapper" id="button-wrapperb" style="left: 0;">
+                <a class="submit bb">Valider</a>
+                <div class="loader-wrapper">
+                    <span class="loader yellow"></span>
+                    <span class="loader pink"></span>
+                </div>
+                <span class="loader orange"></span>
+
+                <div class="check-wrapper">
+                    <svg version="1.1" width="65px" height="38px" viewBox="0 0 64.5 37.4">
+                        <polyline class="check" points="5,13 21.8,32.4 59.5,5 " />
+                    </svg>
+                </div>
+            </div>
+
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="admin/routers.js"></script>
+    <script src="admin/httpsRequester.js"></script>
+    <script src="admin/ajoutercategorie.js"></script>
+    <script src="admin/fontawesome.js"></script>
+</body>
+
+</html>

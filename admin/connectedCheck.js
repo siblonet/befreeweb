@@ -92,6 +92,7 @@ const Executa = async () => {
 }
 
 const FilterRender = async (url) => {
+    document.getElementById('add_data_creation').href = `${url === "getAllBefreePays" ? "addpay" : url === "getAllBefreeCooperative" ? "addcoop" : "addcatego"}`;
     document.getElementById('extension').innerText = `${url === "getAllBefreePays" ? "Extension" : url === "getAllBefreeCooperative" ? "Catégories" : "Pays"}`;
     document.querySelector(".filter-menu").classList.toggle("active");
 
