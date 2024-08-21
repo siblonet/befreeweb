@@ -13,15 +13,16 @@ $(".bb").click(function () {
 
 
 const categorieListing = document.getElementById("categorie_listing");
-
-const listofcategorie = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreeCategorie`);
-if (listofcategorie && listofcategorie.length) {
-    categorieListing.innerHTML = "";
-    listofcategorie.forEach(catego => {
-        categorieListing.innerHTML += `<option value="${catego._id}">${catego.name}</option>`;
-    });
+async function Loada2() {
+    const listofcategorie = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreeCategorie`);
+    if (listofcategorie && listofcategorie.length) {
+        categorieListing.innerHTML = "";
+        listofcategorie.forEach(catego => {
+            categorieListing.innerHTML += `<option value="${catego._id}">${catego.name}</option>`;
+        });
+    }
 }
-
+Loada2();
 const ajouterCooperative = async () => {
     var id_categorie = "";
     categorieListing.addEventListener('change', async function () {

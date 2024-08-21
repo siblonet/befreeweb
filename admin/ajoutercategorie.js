@@ -13,15 +13,18 @@ $(".bb").click(function () {
 
 
 const paysListing = document.getElementById("pays_listing");
+async function Loada1() {
+    const listofpay = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePays`);
 
-const listofpay = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePays`);
-if (listofpay && listofpay.length) {
-    paysListing.innerHTML = "";
-    listofpay.forEach(pays => {
-        paysListing.innerHTML += `<option value="${pays._id}">${pays.nom}</option>`;
-    });
+    if (listofpay && listofpay.length) {
+        paysListing.innerHTML = "";
+        listofpay.forEach(pays => {
+            paysListing.innerHTML += `<option value="${pays._id}">${pays.nom}</option>`;
+        });
+    }
 }
 
+Loada1()
 const ajouterCategorie = async () => {
     var id_pays = "";
     paysListing.addEventListener('change', async function () {
