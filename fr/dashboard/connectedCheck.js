@@ -47,7 +47,7 @@ const Executa = async () => {
         render_agriculter.innerHTML = "";
         agriculteurb.agriculter.forEach((agricul) => {
             const agriculHtml = `
-         <a class="products-row clicbleclass" href="details_view#${agricul.identifiant_interne_exploitation}"  target="_blank">
+         <a class="products-row clicbleclass" href="../details_view#${agricul.identifiant_interne_exploitation}"  target="_blank">
                      <button class="cell-more-button">
                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -58,7 +58,7 @@ const Executa = async () => {
                          </svg>
                      </button>
                      <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "fr/dashboard/asserts/avatay.png"}" alt="product">
                          <span>${agricul.identifiant_interne_exploitation}</span>
                      </div>
                      <div class="product-cell category">
@@ -116,7 +116,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "fr/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
@@ -159,7 +159,7 @@ function ChercheAgriculters(coop_id = "0") {
                                 </svg>
                             </button>
                             <div class="product-cell image">
-                         <img src="${agricul.document ? agricul.document : "dashboard/asserts/avatay.png"}" alt="product">
+                         <img src="${agricul.document ? agricul.document : "fr/dashboard/asserts/avatay.png"}" alt="product">
                                 <span>${agricul.identifiant_interne_exploitation}</span>
                             </div>
                             <div class="product-cell category">
