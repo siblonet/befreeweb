@@ -16,7 +16,7 @@ status = 200
 
 [[redirects]]
 from = "/detail_view"
-to = "/dashboard/agriculterdisplay.html"
+to = "fr/dashboard/agriculterdisplay.html"
 status = 200
 
 [[redirects]]
