@@ -1,11 +1,11 @@
 [[redirects]]
 from = "dashboard"
-to = "/fr/dashboard/dashboard.html"
+to = "fr/dashboard/dashboard.html"
 status = 200
 
 [[redirects]]
 from = "dashboarden"
-to = "/en/dashboard/dashboard.html"
+to = "en/dashboard/dashboard.html"
 status = 200
 
 [[redirects]]
@@ -38,7 +38,7 @@ status = 200
 
 [[redirects]]
 from = "/modifier"
-to = "/admin/editabledata.html"
+to = "admin/editabledata.html"
 status = 200
 
 [[redirects]]
@@ -54,11 +54,11 @@ status = 200
 
 [[redirects]]
 from = "/addcoop"
-to = "/admin/ajoutercooperative.html"
+to = "admin/ajoutercooperative.html"
 status = 200
 
 
 [[redirects]]
 from = "/addcatego"
-to = "/admin/ajoutercategorie.html"
+to = "admin/ajoutercategorie.html"
 status = 200
