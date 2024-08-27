@@ -11,6 +11,7 @@ $(".bb").click(function () {
     ajouterCooperative()
 });
 
+var id_categorie = "";
 
 const categorieListing = document.getElementById("categorie_listing");
 async function Loada2() {
@@ -21,14 +22,14 @@ async function Loada2() {
             categorieListing.innerHTML += `<option value="${catego._id}">${catego.name}</option>`;
         });
     }
-}
-Loada2();
-const ajouterCooperative = async () => {
-    var id_categorie = "";
+
     categorieListing.addEventListener('change', async function () {
         id_categorie = this.value;
     });
+}
+Loada2();
 
+const ajouterCooperative = async () => {
     const nomfrench = document.getElementById('nomfrench').value;
 
     if (nomfrench) {

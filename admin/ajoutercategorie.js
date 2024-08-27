@@ -11,6 +11,7 @@ $(".bb").click(function () {
     ajouterCategorie()
 });
 
+var id_pays = "";
 
 const paysListing = document.getElementById("pays_listing");
 async function Loada1() {
@@ -22,15 +23,15 @@ async function Loada1() {
             paysListing.innerHTML += `<option value="${pays._id}">${pays.nom}</option>`;
         });
     }
-}
 
-Loada1()
-const ajouterCategorie = async () => {
-    var id_pays = "";
     paysListing.addEventListener('change', async function () {
         id_pays = this.value;
     });
+}
 
+Loada1();
+
+const ajouterCategorie = async () => {
     const nomfrench = document.getElementById('nomfrench').value;
     const nomenglish = document.getElementById('nomenglish').value;
 
