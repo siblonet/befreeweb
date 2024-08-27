@@ -17,6 +17,8 @@ const categorieListing = document.getElementById("categorie_listing");
 async function Loada2() {
     const listofcategorie = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreeCategorie`);
     if (listofcategorie && listofcategorie.length) {
+        id_pays = listofcategorie[0]._id;
+
         categorieListing.innerHTML = "";
         listofcategorie.forEach(catego => {
             categorieListing.innerHTML += `<option value="${catego._id}">${catego.name}</option>`;

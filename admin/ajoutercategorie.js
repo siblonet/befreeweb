@@ -18,6 +18,7 @@ async function Loada1() {
     const listofpay = await requesttoBackend('GET', `BefreeAgriculter/getAllBefreePays`);
 
     if (listofpay && listofpay.length) {
+        id_pays = paysListing[0]._id;
         paysListing.innerHTML = "";
         listofpay.forEach(pays => {
             paysListing.innerHTML += `<option value="${pays._id}">${pays.nom}</option>`;
